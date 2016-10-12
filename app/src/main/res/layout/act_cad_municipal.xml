@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtPesquisar"
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:hint="@string/edtPesquisar"/>
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:id="@+id/imagePesquisar"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/edtCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtCodigo"/>
+    <EditText
+        android:id="@+id/edtBairro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtBairro"/>
+    <EditText
+        android:id="@+id/edtHorários"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtHoriarios"
+        android:inputType="textMultiLine"
+        android:lines="4"/>
+    <EditText
+        android:id="@+id/edtItinerario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtItinerario"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+    <EditText
+        android:id="@+id/edtParadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtParadas"/>
+    <EditText
+        android:id="@+id/edtValorPassagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtValorPassagem"/>
+    <EditText
+        android:id="@+id/edtAcesso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtAcesso"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Gravar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bGravar"
+            android:layout_weight="1"
+            android:onClick="salvarMunicipal"/>
+
+        <Button
+            android:text="Excluir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bExcluir"
+            android:layout_weight="1"
+            android:onClick="excluirMunicipal"/>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

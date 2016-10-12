@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:text="@string/btagM_pesqonibus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btagM_pesqonibus"
+        android:layout_below="@+id/btagM_pesqbairro"
+        android:layout_alignLeft="@+id/btagM_pesqbairro"
+        android:layout_alignStart="@+id/btagM_pesqbairro" />
+
+    <Button
+        android:text="@string/btagM_pesqbairro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="138dp"
+        android:id="@+id/btagM_pesqbairro"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

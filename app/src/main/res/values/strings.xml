@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ItaBus</string>
+    <string name="menu_cadMunicipal">Cad. Municipal</string>
+    <string name="menu_cadIntermunicipal">Cad. Intermunicipal</string>
+
+    <string name="botao_acessar">Acessar</string>
+
+    <string-array name="titulos_tag_pesq">
+        <item>Municipal</item>
+        <item>Intermunicipal</item>
+    </string-array>
+
+    <string name="btagM_pesqbairro">Pesquisar por Bairro</string>
+    <string name="btagM_pesqonibus">Pesquisar por Linha</string>
+
+    <string name="btagI_pesqcidade">Pesquisar por Cidade</string>
+    <string name="btagI_pesqempresas">Pesquisar por Empresas</string>
+
+    <string name="edtPesquisar">PESQUISAR</string>
+    <string name="edtCodigo">Código</string>
+    <string name="edtBairro">Bairro</string>
+    <string name="edtHoriarios">Horários</string>
+    <string name="edtItinerario">Itinerário</string>
+    <string name="edtParadas">Paradas</string>
+    <string name="edtValorPassagem">Valor da passagem</string>
+    <string name="edtAcesso">Acesso PCD</string>
+
+
+
+
+</resources>
