@@ -84,4 +84,11 @@ public class Municipal implements Serializable {
     public void setAcessoPcd(String acessoPcd) {
         this.acessoPcd = acessoPcd;
     }
+
+    /*Método para filtrar. Classe filtrarBairro*/
+    @Override
+    public String toString(){
+       // return codigo +" "+ bairro +" "+horarios+" "+itinerarios+" "+paradas+""+valorPassagem+" "+acessoPcd+" ";
+        return bairro;
+    }
 }

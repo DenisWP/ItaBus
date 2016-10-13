@@ -85,4 +85,9 @@ public class Intermunicipal implements Serializable {
     public void setAcessoPcd(String acessoPcd) {
         this.acessoPcd = acessoPcd;
     }
+
+    /*Método para filtrar. Classe filtrarCidade*/
+    public String toString(){
+        return cidade;
+    }
 }

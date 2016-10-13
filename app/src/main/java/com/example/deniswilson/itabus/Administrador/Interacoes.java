@@ -85,9 +85,9 @@ public class Interacoes {
 
     }
 
-    public ArrayAdapter<String> ListarMunicipal(Context context){
-        /*Colocando ClienteArrayAdapter que já foi criada, mudei o arrayadapter<cliente>*/
-        ArrayAdapter adpMunicipal = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1 );
+    public ArrayAdapter<Municipal> ListarMunicipal(Context context){
+        /*Colocando ClienteArrayAdapter que já foi criada, mudei o arrayadapter<municipal>*/
+        ArrayAdapter<Municipal> adpMunicipal = new ArrayAdapter<Municipal>(context, android.R.layout.simple_list_item_1 );
 
         Cursor cursor = conexao.query(BD.TABELA_MUNICIPAL, null, null, null, null, null, null);
 
@@ -99,10 +99,16 @@ public class Interacoes {
             do {
 
                 Municipal municipal = new Municipal();
-                String bairro = cursor.getString(2);
-                adpMunicipal.add(bairro);
+                municipal.setId(cursor.getLong(0));
+                municipal.setCodigo(cursor.getString(1));
+                municipal.setBairro(cursor.getString(2));
+                municipal.setHorarios(cursor.getString(3));
+                municipal.setItinerarios(cursor.getString(4));
+                municipal.setParadas(cursor.getString(5));
+                municipal.setValorPassagem(cursor.getString(6));
+                municipal.setAcessoPcd(cursor.getString(7));
 
-
+                adpMunicipal.add(municipal);
 
             }while (cursor.moveToNext());
         }
