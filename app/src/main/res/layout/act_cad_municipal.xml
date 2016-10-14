@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_launcher"
             android:id="@+id/imagePesquisar"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="pesquisarMunicipal"/>
     </LinearLayout>
 
 

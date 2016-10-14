@@ -1,5 +1,6 @@
 package com.example.deniswilson.itabus.Administrador;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -115,8 +116,25 @@ public class ActCadMunicipal extends AppCompatActivity {
         }
     }
 
-    public void pesquisarMunicipal(){
+    public void pesquisarMunicipal(View view){
         try {
+            String pesqCodigo = pesquisar.getText().toString();
+            Cursor cursor = conexao.query(BD.TABELA_MUNICIPAL, null, null, null, null, null, null);
+            while (cursor.moveToNext()){
+
+
+                String codigoPesq = cursor.getString(1);
+
+                if (codigoPesq == pesqCodigo){
+                    codigo.setText(municipal.getCodigo());
+                    bairro.setText(municipal.getBairro());
+
+                }else {
+                    Toast.makeText(this, "Não encontrei o código: "+cursor.getString(1)+" ", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+
 
         }catch (Exception e){
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
