@@ -47,7 +47,7 @@ public class ActCadMunicipal extends AppCompatActivity {
         horarios = (EditText) findViewById(R.id.edtHorários);
         itinerarios = (EditText) findViewById(R.id.edtItinerario);
         paradas = (EditText) findViewById(R.id.edtParadas);
-        valorPassagem = (EditText) findViewById(R.id.edtParadas);
+        valorPassagem = (EditText) findViewById(R.id.edtValorPassagem);
         acesspPcd = (EditText) findViewById(R.id.edtAcesso);
         pesquisarCod = (ImageButton) findViewById(R.id.imagePesquisar);
         gravar = (Button) findViewById(R.id.bGravar);
@@ -118,23 +118,36 @@ public class ActCadMunicipal extends AppCompatActivity {
 
     public void pesquisarMunicipal(View view){
         try {
+
+            database = new BD(this); // Criando a referencia do banco.
+            conexao = database.getWritableDatabase();
+
             String pesqCodigo = pesquisar.getText().toString();
-            Cursor cursor = conexao.query(BD.TABELA_MUNICIPAL, null, null, null, null, null, null);
-            while (cursor.moveToNext()){
 
+            //Cursor cursor = conexao.query(BD.TABELA_MUNICIPAL, null, null, null, null, null, null);
 
-                String codigoPesq = cursor.getString(1);
+            Cursor cursor = conexao.rawQuery("SELECT "  +BD.COLUNA_CODIGO+","
+                                                        +BD.COLUNA_BAIRRO+","
+                                                        +BD.COLUNA_HORARIOS+","
+                                                        +BD.COLUNA_ITINERARIOS+","
+                                                        +BD.COLUNA_PARADAS+","
+                                                        +BD.COLUNA_VALOR_PASSAGEM+","
+                                                        +BD.COLUNA_ACESSO_PCD+
+                                                        " FROM " +BD.TABELA_MUNICIPAL+" WHERE "+BD.COLUNA_CODIGO+" = " + pesqCodigo, null);
 
-                if (codigoPesq == pesqCodigo){
-                    codigo.setText(municipal.getCodigo());
-                    bairro.setText(municipal.getBairro());
+            if (cursor.moveToFirst()) {
 
-                }else {
-                    Toast.makeText(this, "Não encontrei o código: "+cursor.getString(1)+" ", Toast.LENGTH_SHORT).show();
-                }
-            }
+                codigo.setText(cursor.getString(0));
+                bairro.setText(cursor.getString(1));
+                horarios.setText(cursor.getString(2));
+                itinerarios.setText(cursor.getString(3));
+                paradas.setText(cursor.getString(4));
+                valorPassagem.setText(cursor.getString(5));
+                acesspPcd.setText(cursor.getString(6));
 
-
+            }else {
+                Toast.makeText(this, "Código não encontrado.", Toast.LENGTH_SHORT).show();
+            }conexao.close();
 
         }catch (Exception e){
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
