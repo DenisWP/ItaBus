@@ -108,6 +108,7 @@ public class ActCadMunicipal extends AppCompatActivity {
     public void excluirMunicipal(View view){
         try{
             interacoes.ExcluirMunicipal(municipal);
+            Toast.makeText(this, "Excluído !", Toast.LENGTH_SHORT).show();
         }catch (Exception e){
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setMessage("Erro !" + e.getMessage()); //Retornando o erro que ocorrer.
@@ -124,9 +125,8 @@ public class ActCadMunicipal extends AppCompatActivity {
 
             String pesqCodigo = pesquisar.getText().toString();
 
-            //Cursor cursor = conexao.query(BD.TABELA_MUNICIPAL, null, null, null, null, null, null);
-
-            Cursor cursor = conexao.rawQuery("SELECT "  +BD.COLUNA_CODIGO+","
+            Cursor cursor = conexao.rawQuery("SELECT "  +BD.COLUNA_IDM+","
+                                                        +BD.COLUNA_CODIGO+","
                                                         +BD.COLUNA_BAIRRO+","
                                                         +BD.COLUNA_HORARIOS+","
                                                         +BD.COLUNA_ITINERARIOS+","
@@ -137,13 +137,14 @@ public class ActCadMunicipal extends AppCompatActivity {
 
             if (cursor.moveToFirst()) {
 
-                codigo.setText(cursor.getString(0));
-                bairro.setText(cursor.getString(1));
-                horarios.setText(cursor.getString(2));
-                itinerarios.setText(cursor.getString(3));
-                paradas.setText(cursor.getString(4));
-                valorPassagem.setText(cursor.getString(5));
-                acesspPcd.setText(cursor.getString(6));
+                municipal.setId(cursor.getLong(0));
+                codigo.setText(cursor.getString(1));
+                bairro.setText(cursor.getString(2));
+                horarios.setText(cursor.getString(3));
+                itinerarios.setText(cursor.getString(4));
+                paradas.setText(cursor.getString(5));
+                valorPassagem.setText(cursor.getString(6));
+                acesspPcd.setText(cursor.getString(7));
 
             }else {
                 Toast.makeText(this, "Código não encontrado.", Toast.LENGTH_SHORT).show();
