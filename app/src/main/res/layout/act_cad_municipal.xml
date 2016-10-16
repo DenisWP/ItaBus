@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
-            android:id="@+id/edtPesquisar"
+            android:id="@+id/edtPesquisarM"
             android:layout_width="330dp"
             android:layout_height="match_parent"
             android:hint="@string/edtPesquisar"/>
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imagePesquisar"
+            android:id="@+id/imagePesquisarM"
             android:layout_weight="1"
             android:onClick="pesquisarMunicipal"/>
     </LinearLayout>
@@ -30,41 +30,41 @@
 
 
     <EditText
-        android:id="@+id/edtCodigo"
+        android:id="@+id/edtCodigoM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtCodigo"/>
     <EditText
-        android:id="@+id/edtBairro"
+        android:id="@+id/edtBairroM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtBairro"/>
     <EditText
-        android:id="@+id/edtHorários"
+        android:id="@+id/edtHoráriosM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtHoriarios"
         android:inputType="textMultiLine"
         android:lines="4"/>
     <EditText
-        android:id="@+id/edtItinerario"
+        android:id="@+id/edtItinerarioM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtItinerario"
         android:inputType="textMultiLine"
         android:lines="2"/>
     <EditText
-        android:id="@+id/edtParadas"
+        android:id="@+id/edtParadasM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtParadas"/>
     <EditText
-        android:id="@+id/edtValorPassagem"
+        android:id="@+id/edtValorPassagemM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtValorPassagem"/>
     <EditText
-        android:id="@+id/edtAcesso"
+        android:id="@+id/edtAcessoM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtAcesso"/>
@@ -78,7 +78,7 @@
             android:text="Gravar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bGravar"
+            android:id="@+id/bGravarM"
             android:layout_weight="1"
             android:onClick="salvarMunicipal"/>
 
@@ -86,9 +86,10 @@
             android:text="Excluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bExcluir"
+            android:id="@+id/bExcluirM"
             android:layout_weight="1"
             android:onClick="excluirMunicipal"/>
+
     </LinearLayout>
 
 </LinearLayout>

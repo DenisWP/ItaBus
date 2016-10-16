@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
-        android:id="@+id/btagM_pesqbairro"
+        android:id="@+id/btagI_pesqcidade"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -15,9 +15,9 @@
         android:text="@string/btagI_pesqempresas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btagM_pesqonibus"
-        android:layout_below="@+id/btagM_pesqbairro"
-        android:layout_alignLeft="@+id/btagM_pesqbairro"
-        android:layout_alignStart="@+id/btagM_pesqbairro" />
+        android:id="@+id/btagI_pesqempresas"
+        android:layout_below="@+id/btagI_pesqcidade"
+        android:layout_alignLeft="@+id/btagI_pesqcidade"
+        android:layout_alignStart="@+id/btagI_pesqcidade" />
 
 </RelativeLayout>

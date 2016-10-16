@@ -41,17 +41,17 @@ public class ActCadMunicipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_cad_municipal);
 
-        pesquisar = (EditText) findViewById(R.id.edtPesquisar);
-        codigo = (EditText) findViewById(R.id.edtCodigo);
-        bairro = (EditText) findViewById(R.id.edtBairro);
-        horarios = (EditText) findViewById(R.id.edtHorários);
-        itinerarios = (EditText) findViewById(R.id.edtItinerario);
-        paradas = (EditText) findViewById(R.id.edtParadas);
-        valorPassagem = (EditText) findViewById(R.id.edtValorPassagem);
-        acesspPcd = (EditText) findViewById(R.id.edtAcesso);
-        pesquisarCod = (ImageButton) findViewById(R.id.imagePesquisar);
-        gravar = (Button) findViewById(R.id.bGravar);
-        excluir = (Button) findViewById(R.id.bExcluir);
+        pesquisar = (EditText) findViewById(R.id.edtPesquisarM);
+        codigo = (EditText) findViewById(R.id.edtCodigoM);
+        bairro = (EditText) findViewById(R.id.edtBairroM);
+        horarios = (EditText) findViewById(R.id.edtHoráriosM);
+        itinerarios = (EditText) findViewById(R.id.edtItinerarioM);
+        paradas = (EditText) findViewById(R.id.edtParadasM);
+        valorPassagem = (EditText) findViewById(R.id.edtValorPassagemM);
+        acesspPcd = (EditText) findViewById(R.id.edtAcessoM);
+        pesquisarCod = (ImageButton) findViewById(R.id.imagePesquisarM);
+        gravar = (Button) findViewById(R.id.bGravarM);
+        excluir = (Button) findViewById(R.id.bExcluirM);
 
         try{
             database = new BD(this); // Criando a referencia do banco.
@@ -91,9 +91,11 @@ public class ActCadMunicipal extends AppCompatActivity {
                 if (municipal.getId() == 0){
                     interacoes.InserirMunicipal(municipal);
                     Toast.makeText(this, "Transporte inserido com sucesso.", Toast.LENGTH_SHORT).show();
+                    limparDados();
                 }else {
                     interacoes.AtualizarMunicipal(municipal);
                     Toast.makeText(this, "Atualização realizada com sucesso.", Toast.LENGTH_SHORT).show();
+                    limparDados();
                 }
             }
 
@@ -109,12 +111,26 @@ public class ActCadMunicipal extends AppCompatActivity {
         try{
             interacoes.ExcluirMunicipal(municipal);
             Toast.makeText(this, "Excluído !", Toast.LENGTH_SHORT).show();
+            limparDados();
         }catch (Exception e){
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setMessage("Erro !" + e.getMessage()); //Retornando o erro que ocorrer.
             dlg.setNeutralButton("OK", null);
             dlg.show();
         }
+    }
+
+    public void limparDados(){
+
+        pesquisar.setText("");
+        codigo.setText("");
+        bairro.setText("");
+        horarios.setText("");
+        itinerarios.setText("");
+        paradas.setText("");
+        valorPassagem.setText("");
+        acesspPcd.setText("");
+
     }
 
     public void pesquisarMunicipal(View view){

@@ -28,6 +28,9 @@
         <activity android:name=".Tabs.PesquisaMunicipal" />
 
         <activity android:name=".Listar.ListarMunicipal"> </activity>
+        <activity android:name=".Tabs.PesquisaIntermunicipal" />
+
+        <activity android:name=".Listar.ListarIntermunicipal"> </activity>
 
     </application>
 

@@ -114,4 +114,34 @@ public class Interacoes {
         }
         return adpMunicipal;
     }
+
+    public ArrayAdapter<Intermunicipal> ListarIntermunicipal(Context context){
+        /*Colocando ClienteArrayAdapter que já foi criada, mudei o arrayadapter<municipal>*/
+        ArrayAdapter<Intermunicipal> adpIntermunicipal = new ArrayAdapter<Intermunicipal>(context, android.R.layout.simple_list_item_1 );
+
+        Cursor cursor = conexao.query(BD.TABELA_INTERMUNICIPAL, null, null, null, null, null, null);
+
+        if(cursor.getCount() > 0){
+            /*Percorrer todos os registros, moverá para o próximo registro
+            enquanto houver registro.*/
+            cursor.moveToFirst(); // Posicionando no primeiro registro
+
+            do {
+
+                Intermunicipal intermunicipal = new Intermunicipal();
+                intermunicipal.setId(cursor.getLong(0));
+                intermunicipal.setCodigo(cursor.getString(1));
+                intermunicipal.setCidade(cursor.getString(2));
+                intermunicipal.setHorarios(cursor.getString(3));
+                intermunicipal.setItinerarios(cursor.getString(4));
+                intermunicipal.setParadas(cursor.getString(5));
+                intermunicipal.setValorPassagem(cursor.getString(6));
+                intermunicipal.setAcessoPcd(cursor.getString(7));
+
+                adpIntermunicipal.add(intermunicipal);
+
+            }while (cursor.moveToNext());
+        }
+        return adpIntermunicipal;
+    }
 }

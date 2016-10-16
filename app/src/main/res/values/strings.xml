@@ -10,22 +10,23 @@
         <item>Intermunicipal</item>
     </string-array>
 
+                    <!-- MUNICIPAL -->
     <string name="btagM_pesqbairro">Pesquisar por Bairro</string>
     <string name="btagM_pesqonibus">Pesquisar por Linha</string>
+    <string name="edtBairro">Bairro</string>
 
+                    <!-- INTERMUNICIPAL -->
     <string name="btagI_pesqcidade">Pesquisar por Cidade</string>
     <string name="btagI_pesqempresas">Pesquisar por Empresas</string>
+    <string name="edtCidade">Cidade</string>
 
+                    <!-- PARA AS DUAS OPÇÕES -->
     <string name="edtPesquisar">PESQUISAR</string>
     <string name="edtCodigo">Código</string>
-    <string name="edtBairro">Bairro</string>
     <string name="edtHoriarios">Horários</string>
     <string name="edtItinerario">Itinerário</string>
     <string name="edtParadas">Paradas</string>
     <string name="edtValorPassagem">Valor da passagem</string>
     <string name="edtAcesso">Acesso PCD</string>
-
-
-
 
 </resources>
