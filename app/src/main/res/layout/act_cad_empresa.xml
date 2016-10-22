@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
-            android:id="@+id/edtPesquisarM"
+            android:id="@+id/edtPesquisarE"
             android:layout_width="330dp"
             android:layout_height="match_parent"
             android:hint="@string/edtPesquisar"/>
@@ -22,52 +22,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imagePesquisarM"
+            android:id="@+id/imagePesquisarE"
             android:layout_weight="1"
-            android:onClick="pesquisarMunicipal"/>
+            android:onClick="pesquisarEmpresa"/>
     </LinearLayout>
 
 
 
     <EditText
-        android:id="@+id/edtCodigoM"
+        android:id="@+id/edtCodigoE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtCodigo"/>
     <EditText
-        android:id="@+id/edtBairroM"
+        android:id="@+id/edtNomeE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edtBairro"/>
+        android:hint="@string/edtNomeE"/>
     <EditText
-        android:id="@+id/edtHoráriosM"
+        android:id="@+id/edtSiglaE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edtHoriarios"
+        android:hint="@string/edtSiglaE"
         android:inputType="textMultiLine"
         android:lines="4"/>
     <EditText
-        android:id="@+id/edtItinerarioM"
+        android:id="@+id/edtContatoE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edtItinerario"
+        android:hint="@string/edtContatoE"
         android:inputType="textMultiLine"
         android:lines="2"/>
-    <EditText
-        android:id="@+id/edtParadasM"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edtParadas"/>
-    <EditText
-        android:id="@+id/edtValorPassagemM"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edtValorPassagem"/>
-    <EditText
-        android:id="@+id/edtAcessoM"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edtAcesso"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -78,25 +63,17 @@
             android:text="Gravar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bGravarM"
+            android:id="@+id/bGravarI"
             android:layout_weight="1"
-            android:onClick="salvarMunicipal"/>
+            android:onClick="salvarEmpresa"/>
 
         <Button
             android:text="Excluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bExcluirM"
+            android:id="@+id/bExcluirI"
             android:layout_weight="1"
-            android:onClick="excluirMunicipal"/>
-
-        <Button
-            android:text="Voltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bVoltarM"
-            android:layout_weight="1"
-            android:onClick="voltarM"/>
+            android:onClick="excluirEmpresa"/>
 
     </LinearLayout>
 

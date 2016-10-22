@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.deniswilson.itabus.Administrador.ActCadIntermunicipal;
+import com.example.deniswilson.itabus.Administrador.ActCadEmpresa;
 import com.example.deniswilson.itabus.Administrador.ActCadMunicipal;
 import com.example.deniswilson.itabus.TabsPageAdapter.PageAdapter;
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        return true; /*Falso para versão usuário*/
     }
 
     @Override
@@ -68,15 +68,15 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        //Comparação para chamar as classes específicas.
         if (id == R.id.menu_cadMunicipal) {
             Intent irCadM = new Intent();
             irCadM.setClass(this, ActCadMunicipal.class); //Setar a classe cadCliente
             startActivity(irCadM); // I
         }else {
-            if (id == R.id.menu_cadIntermunicipal){
+            if (id == R.id.menu_cadEmpresa){
                 Intent irCadI = new Intent();
-                irCadI.setClass(this, ActCadIntermunicipal.class); //Setar a classe cadCliente
+                irCadI.setClass(this, ActCadEmpresa.class); //Setar a classe cadCliente
                 startActivity(irCadI); //
             }
         }

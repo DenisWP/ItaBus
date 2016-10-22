@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TelaInicial"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,18 +19,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"
-                  android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
         <activity android:name=".Administrador.ActCadMunicipal"> </activity>
-        <activity android:name=".Administrador.ActCadIntermunicipal"> </activity>
-        <activity android:name=".Tabs.PesquisaMunicipal" />
+        <activity android:name=".Administrador.ActCadEmpresa"> </activity>
+        <activity android:name=".Tabs.Inicio" />
 
         <activity android:name=".Listar.ListarMunicipal"> </activity>
-        <activity android:name=".Tabs.PesquisaIntermunicipal" />
-
-        <activity android:name=".Listar.ListarIntermunicipal"> </activity>
+        <activity android:name=".Tabs.PesquisaBairro" />
 
     </application>
 

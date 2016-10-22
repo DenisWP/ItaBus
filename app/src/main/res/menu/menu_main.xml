@@ -9,9 +9,9 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/menu_cadIntermunicipal"
+        android:id="@+id/menu_cadEmpresa"
         android:orderInCategory="100"
-        android:title="@string/menu_cadIntermunicipal"
+        android:title="@string/menu_cadEmpresa"
         app:showAsAction="never" />
 
 </menu>

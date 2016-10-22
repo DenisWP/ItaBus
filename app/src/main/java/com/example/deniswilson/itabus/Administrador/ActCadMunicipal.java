@@ -1,5 +1,7 @@
 package com.example.deniswilson.itabus.Administrador;
 
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -11,7 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.deniswilson.itabus.MainActivity;
 import com.example.deniswilson.itabus.R;
+import com.example.deniswilson.itabus.Tabs.Inicio;
 
 /**
  * Created by Denis Wilson on 11/10/2016.
@@ -172,5 +176,11 @@ public class ActCadMunicipal extends AppCompatActivity {
             dlg.setNeutralButton("OK", null);
             dlg.show();
         }
+    }
+
+    public void voltarM(View view){
+        Intent irMain = new Intent();
+        irMain.setClass(this, MainActivity.class ); //Setar a classe cadCliente
+        startActivity(irMain); // Iniciar a intent
     }
 }

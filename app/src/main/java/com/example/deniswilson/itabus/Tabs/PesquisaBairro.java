@@ -1,25 +1,33 @@
-package com.example.deniswilson.itabus.Listar;
+package com.example.deniswilson.itabus.Tabs;
+
 
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.*;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
-import com.example.deniswilson.itabus.Administrador.Intermunicipal;
+import com.example.deniswilson.itabus.Administrador.Municipal;
+import com.example.deniswilson.itabus.Listar.ListarMunicipal;
 import com.example.deniswilson.itabus.R;
 
 /**
- * Created by Denis Wilson on 12/10/2016.
+ * Created by Denis Wilson on 08/10/2016.
  */
 
-public class ListarIntermunicipal extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class PesquisaBairro extends Fragment implements AdapterView.OnItemClickListener{
 
     /*
 * Foi implementado um evento "AdapterView.OnItemClickListener ",
@@ -31,47 +39,49 @@ public class ListarIntermunicipal extends ActionBarActivity implements AdapterVi
     private BD database;
     private Interacoes interacoes;
     private SQLiteDatabase conexao;
-    private ListView listarIntermunicipal;
-    private ArrayAdapter<Intermunicipal> adpIntermunicipal;
-    private EditText pesq_intermunicipal;
+    private ListView listarMunicipal;
+    private ArrayAdapter<Municipal> adpMunicipal;
+    private EditText pesq_municipal;
 
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_listar_intermunicipal);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.act_listar_municipal, container, false);
 
-        pesq_intermunicipal = (EditText) findViewById(R.id.pesq_intermunicipal);
+        pesq_municipal = (EditText) rootView.findViewById(R.id.pesq_municipal);
 
-        listarIntermunicipal = (ListView) findViewById(R.id.listarIntermunicipal);
-        listarIntermunicipal.setOnItemClickListener(this); // Instanciando o evento de clicar no intem
+        listarMunicipal = (ListView) rootView.findViewById(R.id.listarMunicipal);
+        listarMunicipal.setOnItemClickListener(this); // Instanciando o evento de clicar no intem
 
         try{
                 /*
                 * Feito para analisar se a conexão com o bando de dados
                 * foi realizada corretamente.
                 * */
-            database = new BD(this);
+            database = new BD(getActivity());
             conexao = database.getWritableDatabase();
 
             interacoes = new Interacoes(conexao);
-            adpIntermunicipal = interacoes.ListarIntermunicipal(this);
+            adpMunicipal = interacoes.ListarMunicipal(getActivity());
 
                 /*Vinculando ao objeto no ListView
                 * para exibir os resultados encontrados.
                 * */
-            listarIntermunicipal.setAdapter(adpIntermunicipal);
+            listarMunicipal.setAdapter(adpMunicipal);
 
-            filtrarCidades filtrarCidades = new filtrarCidades(adpIntermunicipal);
-            pesq_intermunicipal.addTextChangedListener(filtrarCidades);
+            filtrarBairros filtrarBairros = new filtrarBairros(adpMunicipal);
+            pesq_municipal.addTextChangedListener(filtrarBairros);
 
         }catch (SQLException ex){
-            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            AlertDialog.Builder dlg = new AlertDialog.Builder(getActivity());
             dlg.setMessage("Erro ! " + ex.getMessage());
             dlg.setNeutralButton("Ok", null);
             dlg.show();
 
         }
 
+        return rootView;
     }
 
     @Override
@@ -83,10 +93,10 @@ public class ListarIntermunicipal extends ActionBarActivity implements AdapterVi
     * no componete texto TEXTWATCHER, no meu caso, será capturado enquando o usuário estiver
     * digitando*/
 
-    private class filtrarCidades implements TextWatcher{
+    private class filtrarBairros implements TextWatcher {
 
-        private ArrayAdapter<Intermunicipal> arrayAdapter;
-        private filtrarCidades(ArrayAdapter<Intermunicipal> arrayAdapter){
+        private ArrayAdapter<Municipal> arrayAdapter;
+        private filtrarBairros(ArrayAdapter<Municipal> arrayAdapter){
             this.arrayAdapter = arrayAdapter;
         }
 
@@ -107,6 +117,4 @@ public class ListarIntermunicipal extends ActionBarActivity implements AdapterVi
         }
     }
 
-
 }
-

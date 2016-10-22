@@ -18,19 +18,17 @@ import com.example.deniswilson.itabus.R;
  * Created by Denis Wilson on 08/10/2016.
  */
 
-public class PesquisaMunicipal extends Fragment {
+public class Inicio extends Fragment {
 
-    private Button bPesqBairro;
-    private Button bPesqLinha;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.act_tag_municipal, container, false);
+        View rootView = inflater.inflate(R.layout.act_tela_inicial, container, false);
 
         /*
         *  Criando função OnclickListener, para chamar a tela de lista. Porque estou usando o Fragment
-        * */
+        *
         bPesqBairro = (Button) rootView.findViewById(R.id.btagM_pesqbairro);
         bPesqBairro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +36,7 @@ public class PesquisaMunicipal extends Fragment {
                 Intent irMunicipal = new Intent(getActivity(), ListarMunicipal.class);
                 startActivity(irMunicipal);
             }
-        });
+        });*/
 
         return rootView;
     }

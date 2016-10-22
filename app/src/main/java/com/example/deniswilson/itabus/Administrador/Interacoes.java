@@ -31,18 +31,15 @@ public class Interacoes {
         conexao.insert(BD.TABELA_MUNICIPAL, null, dadosMunicipal);
     }
 
-    public void InserirIntermunicipal(Intermunicipal intermunicipal){
-        ContentValues dadosIntermunicipal = new ContentValues();
+    public void InserirEmpresa(Empresa empresa){
+        ContentValues dadosEmpresa = new ContentValues();
 
-        dadosIntermunicipal.put(BD.COLUNA_CODIGO, intermunicipal.getCodigo());
-        dadosIntermunicipal.put(BD.COLUNA_CIDADE, intermunicipal.getCidade());
-        dadosIntermunicipal.put(BD.COLUNA_HORARIOS, intermunicipal.getHorarios());
-        dadosIntermunicipal.put(BD.COLUNA_ITINERARIOS, intermunicipal.getItinerarios());
-        dadosIntermunicipal.put(BD.COLUNA_PARADAS, intermunicipal.getParadas());
-        dadosIntermunicipal.put(BD.COLUNA_VALOR_PASSAGEM, intermunicipal.getValorPassagem());
-        dadosIntermunicipal.put(BD.COLUNA_ACESSO_PCD, intermunicipal.getAcessoPcd());
+        dadosEmpresa.put(BD.COLUNA_CODIGO_EMPRESA, empresa.getCodigo());
+        dadosEmpresa.put(BD.COLUNA_NOME_EMPRESA, empresa.getNome());
+        dadosEmpresa.put(BD.COLUNA_SIGLA, empresa.getSigla());
+        dadosEmpresa.put(BD.COLUNA_CONTATO, empresa.getContato());
 
-        conexao.insert(BD.TABELA_INTERMUNICIPAL, null, dadosIntermunicipal);
+        conexao.insert(BD.TABELA_EMPRESA, null, dadosEmpresa);
     }
 
     public void AtualizarMunicipal(Municipal municipal){
@@ -59,18 +56,17 @@ public class Interacoes {
         conexao.update(BD.TABELA_MUNICIPAL, dadosMunicipal, BD.COLUNA_IDM + " = ? ", new String[]{String.valueOf(municipal.getId())});
     }
 
-    public void AtualizarIntermunicipal(Intermunicipal intermunicipal){
-        ContentValues dadosIntermunicipal = new ContentValues();
+    public void AtualizarEmpresa(Empresa empresa){
+        ContentValues dadosEmpresa = new ContentValues();
 
-        dadosIntermunicipal.put(BD.COLUNA_CODIGO, intermunicipal.getCodigo());
-        dadosIntermunicipal.put(BD.COLUNA_CIDADE, intermunicipal.getCidade());
-        dadosIntermunicipal.put(BD.COLUNA_HORARIOS, intermunicipal.getHorarios());
-        dadosIntermunicipal.put(BD.COLUNA_ITINERARIOS, intermunicipal.getItinerarios());
-        dadosIntermunicipal.put(BD.COLUNA_PARADAS, intermunicipal.getParadas());
-        dadosIntermunicipal.put(BD.COLUNA_VALOR_PASSAGEM, intermunicipal.getValorPassagem());
-        dadosIntermunicipal.put(BD.COLUNA_ACESSO_PCD, intermunicipal.getAcessoPcd());
+        dadosEmpresa.put(BD.COLUNA_CODIGO_EMPRESA, empresa.getCodigo());
+        dadosEmpresa.put(BD.COLUNA_NOME_EMPRESA, empresa.getNome());
+        dadosEmpresa.put(BD.COLUNA_SIGLA, empresa.getSigla());
+        dadosEmpresa.put(BD.COLUNA_CONTATO, empresa.getContato());
 
-        conexao.update(BD.TABELA_INTERMUNICIPAL, dadosIntermunicipal, BD.COLUNA_IDI + " = ? ", new String[]{String.valueOf(intermunicipal.getId())});
+        conexao.insert(BD.TABELA_EMPRESA, null, dadosEmpresa);
+
+        conexao.update(BD.TABELA_EMPRESA, dadosEmpresa, BD.COLUNA_IDE + " = ? ", new String[]{String.valueOf(empresa.getId())});
     }
 
     public void ExcluirMunicipal (Municipal municipal){
@@ -79,9 +75,9 @@ public class Interacoes {
 
     }
 
-    public void ExcluirIntermunicipal (Intermunicipal intermunicipal){
-        conexao.delete(BD.TABELA_INTERMUNICIPAL, BD.COLUNA_IDI + " = ? ",
-                new String[]{String.valueOf(intermunicipal.getId())});
+    public void ExcluirEmpresa (Empresa empresa){
+        conexao.delete(BD.TABELA_EMPRESA, BD.COLUNA_IDE + " = ? ",
+                new String[]{String.valueOf(empresa.getId())});
 
     }
 
@@ -115,33 +111,4 @@ public class Interacoes {
         return adpMunicipal;
     }
 
-    public ArrayAdapter<Intermunicipal> ListarIntermunicipal(Context context){
-        /*Colocando ClienteArrayAdapter que já foi criada, mudei o arrayadapter<municipal>*/
-        ArrayAdapter<Intermunicipal> adpIntermunicipal = new ArrayAdapter<Intermunicipal>(context, android.R.layout.simple_list_item_1 );
-
-        Cursor cursor = conexao.query(BD.TABELA_INTERMUNICIPAL, null, null, null, null, null, null);
-
-        if(cursor.getCount() > 0){
-            /*Percorrer todos os registros, moverá para o próximo registro
-            enquanto houver registro.*/
-            cursor.moveToFirst(); // Posicionando no primeiro registro
-
-            do {
-
-                Intermunicipal intermunicipal = new Intermunicipal();
-                intermunicipal.setId(cursor.getLong(0));
-                intermunicipal.setCodigo(cursor.getString(1));
-                intermunicipal.setCidade(cursor.getString(2));
-                intermunicipal.setHorarios(cursor.getString(3));
-                intermunicipal.setItinerarios(cursor.getString(4));
-                intermunicipal.setParadas(cursor.getString(5));
-                intermunicipal.setValorPassagem(cursor.getString(6));
-                intermunicipal.setAcessoPcd(cursor.getString(7));
-
-                adpIntermunicipal.add(intermunicipal);
-
-            }while (cursor.moveToNext());
-        }
-        return adpIntermunicipal;
-    }
 }

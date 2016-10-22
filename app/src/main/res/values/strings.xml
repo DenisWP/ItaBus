@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">ItaBus</string>
     <string name="menu_cadMunicipal">Cad. Municipal</string>
-    <string name="menu_cadIntermunicipal">Cad. Intermunicipal</string>
+    <string name="menu_cadEmpresa">Cad. Empresa</string>
 
     <string name="botao_acessar">Acessar</string>
 
     <string-array name="titulos_tag_pesq">
-        <item>Municipal</item>
-        <item>Intermunicipal</item>
+        <item>Início</item>
+        <item>Pesquisar</item>
     </string-array>
 
                     <!-- MUNICIPAL -->
@@ -15,10 +15,18 @@
     <string name="btagM_pesqonibus">Pesquisar por Linha</string>
     <string name="edtBairro">Bairro</string>
 
-                    <!-- INTERMUNICIPAL -->
+                    <!-- EMPRESA -->
     <string name="btagI_pesqcidade">Pesquisar por Cidade</string>
     <string name="btagI_pesqempresas">Pesquisar por Empresas</string>
     <string name="edtCidade">Cidade</string>
+    <string name="edtCodigoE">Código</string>
+    <string name="edtNomeE">Nome da Empresa</string>
+    <string name="edtSiglaE">Sigla da Empresa</string>
+    <string name="edtContatoE">Contato</string>
+
+
+
+
 
                     <!-- PARA AS DUAS OPÇÕES -->
     <string name="edtPesquisar">PESQUISAR</string>
