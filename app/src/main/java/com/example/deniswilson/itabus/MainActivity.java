@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.deniswilson.itabus.Administrador.ActCadEmpresa;
+import com.example.deniswilson.itabus.Administrador.ActCadHorarios;
 import com.example.deniswilson.itabus.Administrador.ActCadMunicipal;
 import com.example.deniswilson.itabus.TabsPageAdapter.PageAdapter;
 
@@ -78,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent irCadI = new Intent();
                 irCadI.setClass(this, ActCadEmpresa.class); //Setar a classe cadCliente
                 startActivity(irCadI); //
+            }else {
+                if(id == R.id.menu_cadHorarios){
+                    Intent irCadH = new Intent();
+                    irCadH.setClass(this,ActCadHorarios.class);
+                    startActivity(irCadH);
+                }
             }
         }
         return super.onOptionsItemSelected(item);

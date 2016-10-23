@@ -162,4 +162,5 @@ public class ActCadEmpresa extends AppCompatActivity {
         irMain.setClass(this, MainActivity.class ); //Setar a classe cadCliente
         startActivity(irMain); // Iniciar a intent
     }
+
 }

@@ -105,14 +105,51 @@ public class Interacoes {
         dadosEmpresa.put(BD.COLUNA_SIGLA, empresa.getSigla());
         dadosEmpresa.put(BD.COLUNA_CONTATO, empresa.getContato());
 
-        conexao.insert(BD.TABELA_EMPRESA, null, dadosEmpresa);
-
         conexao.update(BD.TABELA_EMPRESA, dadosEmpresa, BD.COLUNA_IDE + " = ? ", new String[]{String.valueOf(empresa.getId())});
     }
 
     public void ExcluirEmpresa (Empresa empresa){
         conexao.delete(BD.TABELA_EMPRESA, BD.COLUNA_IDE + " = ? ",
                 new String[]{String.valueOf(empresa.getId())});
+
+    }
+
+
+    /*INTERAÇÕES HORARIOS*/
+
+    public void InserirHorarios(Horarios horarios){
+        ContentValues dadosHorarios = new ContentValues();
+
+        dadosHorarios.put(BD.COLUNA_CODIGO_HORARIO, horarios.getCodigo());
+        dadosHorarios.put(BD.COLUNA_SEGUNDA, horarios.getSegunda());
+        dadosHorarios.put(BD.COLUNA_TERÇA, horarios.getTerça());
+        dadosHorarios.put(BD.COLUNA_QUARTA, horarios.getQuarta());
+        dadosHorarios.put(BD.COLUNA_QUINTA, horarios.getQuinta());
+        dadosHorarios.put(BD.COLUNA_SEXTA, horarios.getSexta());
+        dadosHorarios.put(BD.COLUNA_SABADO, horarios.getSabado());
+        dadosHorarios.put(BD.COLUNA_DOMINGO, horarios.getDomingo());
+
+        conexao.insert(BD.TABELA_HORARIOS, null, dadosHorarios);
+    }
+
+    public void AtualizarHorarios(Horarios horarios){
+        ContentValues dadosHorarios = new ContentValues();
+
+        dadosHorarios.put(BD.COLUNA_CODIGO_HORARIO, horarios.getCodigo());
+        dadosHorarios.put(BD.COLUNA_SEGUNDA, horarios.getSegunda());
+        dadosHorarios.put(BD.COLUNA_TERÇA, horarios.getTerça());
+        dadosHorarios.put(BD.COLUNA_QUARTA, horarios.getQuarta());
+        dadosHorarios.put(BD.COLUNA_QUINTA, horarios.getQuinta());
+        dadosHorarios.put(BD.COLUNA_SEXTA, horarios.getSexta());
+        dadosHorarios.put(BD.COLUNA_SABADO, horarios.getSabado());
+        dadosHorarios.put(BD.COLUNA_DOMINGO, horarios.getDomingo());
+
+        conexao.update(BD.TABELA_HORARIOS, dadosHorarios, BD.COLUNA_IDH + " = ? ", new String[]{String.valueOf(horarios.getId())});
+    }
+
+    public void ExcluirHorarios (Horarios horarios){
+        conexao.delete(BD.TABELA_HORARIOS, BD.COLUNA_IDH + " = ? ",
+                new String[]{String.valueOf(horarios.getId())});
 
     }
 

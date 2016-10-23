@@ -2,6 +2,7 @@
     <string name="app_name">ItaBus</string>
     <string name="menu_cadMunicipal">Cad. Municipal</string>
     <string name="menu_cadEmpresa">Cad. Empresa</string>
+    <string name="menu_cadHorarios">Cad. Horarios</string>
 
     <string name="botao_acessar">Acessar</string>
 
@@ -24,9 +25,14 @@
     <string name="edtSiglaE">Sigla da Empresa</string>
     <string name="edtContatoE">Contato</string>
 
-
-
-
+                    <!-- HORÁRIOS -->
+    <string name="edtSegunda">Segunda-feira</string>
+    <string name="edtTerça">Terça-feira</string>
+    <string name="edtQuarta">Quarta-feira</string>
+    <string name="edtQuinta">Quinta-feira</string>
+    <string name="edtSexta">Sexta-feira</string>
+    <string name="edtSabado">Sábado</string>
+    <string name="edtDomingo">Domingo e Feriados</string>
 
                     <!-- PARA AS DUAS OPÇÕES -->
     <string name="edtPesquisar">PESQUISAR</string>

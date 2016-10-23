@@ -18,7 +18,7 @@ public class BD extends SQLiteOpenHelper{
     public static final String COLUNA_BAIRRO = "bairro"; // Transporte municipal
     public static final String COLUNA_HORARIOS = "horarios";
     public static final String COLUNA_ITINERARIOS = "itinerarios";
-    public static final String COLUNA_PARADAS = "paradas"; // Transporte Intermunicipal
+    public static final String COLUNA_PARADAS = "paradas"; // Transporte
     public static final String COLUNA_VALOR_PASSAGEM = "valor_passagem";
     public static final String COLUNA_ACESSO_PCD = "acesso_pcd";
 
@@ -31,7 +31,7 @@ public class BD extends SQLiteOpenHelper{
     public static final String COLUNA_CONTATO = "contato";
 
     public static final String TABELA_HORARIOS = "empresa";
-    public static final String COLUNA_IDH = "_id"; /*Chave primária para tabela intermunicipal*/
+    public static final String COLUNA_IDH = "_id"; /*Chave primária para tabela */
     public static final String COLUNA_CODIGO_HORARIO = "codigo_horario";
     public static final String COLUNA_SEGUNDA = "segunda";
     public static final String COLUNA_TERÇA = "terça";
