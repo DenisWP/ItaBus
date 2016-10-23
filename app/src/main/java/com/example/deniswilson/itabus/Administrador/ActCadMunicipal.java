@@ -153,7 +153,8 @@ public class ActCadMunicipal extends AppCompatActivity {
                                                         +BD.COLUNA_PARADAS+","
                                                         +BD.COLUNA_VALOR_PASSAGEM+","
                                                         +BD.COLUNA_ACESSO_PCD+
-                                                        " FROM " +BD.TABELA_MUNICIPAL+" WHERE "+BD.COLUNA_CODIGO+" = " + pesqCodigo, null);
+                                                        " FROM " +BD.TABELA_MUNICIPAL+" WHERE "
+                                                        +BD.COLUNA_CODIGO+" = " + pesqCodigo, null);
 
             if (cursor.moveToFirst()) {
 

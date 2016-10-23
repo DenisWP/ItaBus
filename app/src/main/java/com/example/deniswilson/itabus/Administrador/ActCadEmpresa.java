@@ -1,5 +1,6 @@
 package com.example.deniswilson.itabus.Administrador;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.deniswilson.itabus.MainActivity;
 import com.example.deniswilson.itabus.R;
 
 /**
@@ -39,14 +41,14 @@ public class ActCadEmpresa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_cad_empresa);
 
-        pesquisar = (EditText) findViewById(R.id.edtCodigoE);
+        pesquisar = (EditText) findViewById(R.id.edtPesquisarE);
         codigoE = (EditText) findViewById(R.id.edtCodigoE);
         nomeE = (EditText) findViewById(R.id.edtNomeE);
         siglaE = (EditText) findViewById(R.id.edtSiglaE);
-        contatoE = (EditText) findViewById(R.id.edtCodigoE);
+        contatoE = (EditText) findViewById(R.id.edtContatoE);
         pesquisarCod = (ImageButton) findViewById(R.id.imagePesquisarE);
-        gravar = (Button) findViewById(R.id.bGravarI);
-        excluir = (Button) findViewById(R.id.bExcluirI);
+        gravar = (Button) findViewById(R.id.bGravarE);
+        excluir = (Button) findViewById(R.id.bExcluirE);
 
         try{
             database = new BD(this); // Criando a referencia do banco.
@@ -62,7 +64,7 @@ public class ActCadEmpresa extends AppCompatActivity {
 
     }
 
-    public void salvarMunicipal(View view){
+    public void salvarEmpresa(View view){
         try {
             empresa.setCodigo(codigoE.getText().toString());
             empresa.setNome(nomeE.getText().toString());
@@ -79,7 +81,7 @@ public class ActCadEmpresa extends AppCompatActivity {
             }else {
                 if (empresa.getId() == 0){
                     interacoes.InserirEmpresa(empresa);
-                    Toast.makeText(this, "Transporte inserido com sucesso.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Dados inseridos com sucesso.", Toast.LENGTH_SHORT).show();
                     limparDados();
                 }else {
                     interacoes.AtualizarEmpresa(empresa);
@@ -125,14 +127,15 @@ public class ActCadEmpresa extends AppCompatActivity {
             database = new BD(this); // Criando a referencia do banco.
             conexao = database.getWritableDatabase();
 
-            String pesqCodigo = pesquisar.getText().toString();
+            String pesqCodigoE = pesquisar.getText().toString();
 
             Cursor cursor = conexao.rawQuery("SELECT "  +BD.COLUNA_IDE+","
-                    +BD.COLUNA_CODIGO_EMPRESA+","
-                    +BD.COLUNA_NOME_EMPRESA+","
-                    +BD.COLUNA_SIGLA+","
-                    +BD.COLUNA_CONTATO+
-                    " FROM " +BD.TABELA_EMPRESA+" WHERE "+BD.COLUNA_CODIGO_EMPRESA+" = " + pesqCodigo, null);
+                                                        +BD.COLUNA_CODIGO_EMPRESA+","
+                                                        +BD.COLUNA_NOME_EMPRESA+","
+                                                        +BD.COLUNA_SIGLA+","
+                                                        +BD.COLUNA_CONTATO+
+                                                        " FROM " +BD.TABELA_EMPRESA+" WHERE "
+                                                        +BD.COLUNA_CODIGO_EMPRESA+" = " + pesqCodigoE, null);
 
             if (cursor.moveToFirst()) {
 
@@ -152,5 +155,11 @@ public class ActCadEmpresa extends AppCompatActivity {
             dlg.setNeutralButton("OK", null);
             dlg.show();
         }
+    }
+
+    public void voltarM(View view){
+        Intent irMain = new Intent();
+        irMain.setClass(this, MainActivity.class ); //Setar a classe cadCliente
+        startActivity(irMain); // Iniciar a intent
     }
 }

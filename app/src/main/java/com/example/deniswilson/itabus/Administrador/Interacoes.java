@@ -17,6 +17,8 @@ public class Interacoes {
         this.conexao = conexao;
     }
 
+    /*INTERAÇÕES - TRANSPORTE MUNICIPAL*/
+
     public void InserirMunicipal(Municipal municipal){
         ContentValues dadosMunicipal = new ContentValues();
 
@@ -29,17 +31,6 @@ public class Interacoes {
         dadosMunicipal.put(BD.COLUNA_ACESSO_PCD, municipal.getAcessoPcd());
 
         conexao.insert(BD.TABELA_MUNICIPAL, null, dadosMunicipal);
-    }
-
-    public void InserirEmpresa(Empresa empresa){
-        ContentValues dadosEmpresa = new ContentValues();
-
-        dadosEmpresa.put(BD.COLUNA_CODIGO_EMPRESA, empresa.getCodigo());
-        dadosEmpresa.put(BD.COLUNA_NOME_EMPRESA, empresa.getNome());
-        dadosEmpresa.put(BD.COLUNA_SIGLA, empresa.getSigla());
-        dadosEmpresa.put(BD.COLUNA_CONTATO, empresa.getContato());
-
-        conexao.insert(BD.TABELA_EMPRESA, null, dadosEmpresa);
     }
 
     public void AtualizarMunicipal(Municipal municipal){
@@ -56,28 +47,9 @@ public class Interacoes {
         conexao.update(BD.TABELA_MUNICIPAL, dadosMunicipal, BD.COLUNA_IDM + " = ? ", new String[]{String.valueOf(municipal.getId())});
     }
 
-    public void AtualizarEmpresa(Empresa empresa){
-        ContentValues dadosEmpresa = new ContentValues();
-
-        dadosEmpresa.put(BD.COLUNA_CODIGO_EMPRESA, empresa.getCodigo());
-        dadosEmpresa.put(BD.COLUNA_NOME_EMPRESA, empresa.getNome());
-        dadosEmpresa.put(BD.COLUNA_SIGLA, empresa.getSigla());
-        dadosEmpresa.put(BD.COLUNA_CONTATO, empresa.getContato());
-
-        conexao.insert(BD.TABELA_EMPRESA, null, dadosEmpresa);
-
-        conexao.update(BD.TABELA_EMPRESA, dadosEmpresa, BD.COLUNA_IDE + " = ? ", new String[]{String.valueOf(empresa.getId())});
-    }
-
     public void ExcluirMunicipal (Municipal municipal){
         conexao.delete(BD.TABELA_MUNICIPAL, BD.COLUNA_IDM + " = ? ",
                 new String[]{String.valueOf(municipal.getId())});
-
-    }
-
-    public void ExcluirEmpresa (Empresa empresa){
-        conexao.delete(BD.TABELA_EMPRESA, BD.COLUNA_IDE + " = ? ",
-                new String[]{String.valueOf(empresa.getId())});
 
     }
 
@@ -109,6 +81,39 @@ public class Interacoes {
             }while (cursor.moveToNext());
         }
         return adpMunicipal;
+    }
+
+
+    /*INTERAÇÕES - EMPRESA */
+
+    public void InserirEmpresa(Empresa empresa){
+        ContentValues dadosEmpresa = new ContentValues();
+
+        dadosEmpresa.put(BD.COLUNA_CODIGO_EMPRESA, empresa.getCodigo());
+        dadosEmpresa.put(BD.COLUNA_NOME_EMPRESA, empresa.getNome());
+        dadosEmpresa.put(BD.COLUNA_SIGLA, empresa.getSigla());
+        dadosEmpresa.put(BD.COLUNA_CONTATO, empresa.getContato());
+
+        conexao.insert(BD.TABELA_EMPRESA, null, dadosEmpresa);
+    }
+
+    public void AtualizarEmpresa(Empresa empresa){
+        ContentValues dadosEmpresa = new ContentValues();
+
+        dadosEmpresa.put(BD.COLUNA_CODIGO_EMPRESA, empresa.getCodigo());
+        dadosEmpresa.put(BD.COLUNA_NOME_EMPRESA, empresa.getNome());
+        dadosEmpresa.put(BD.COLUNA_SIGLA, empresa.getSigla());
+        dadosEmpresa.put(BD.COLUNA_CONTATO, empresa.getContato());
+
+        conexao.insert(BD.TABELA_EMPRESA, null, dadosEmpresa);
+
+        conexao.update(BD.TABELA_EMPRESA, dadosEmpresa, BD.COLUNA_IDE + " = ? ", new String[]{String.valueOf(empresa.getId())});
+    }
+
+    public void ExcluirEmpresa (Empresa empresa){
+        conexao.delete(BD.TABELA_EMPRESA, BD.COLUNA_IDE + " = ? ",
+                new String[]{String.valueOf(empresa.getId())});
+
     }
 
 }
