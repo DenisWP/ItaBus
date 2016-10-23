@@ -10,7 +10,7 @@ import android.database.sqlite.*;
 public class BD extends SQLiteOpenHelper{
 
     private static final String NOME_BD = "transporte";
-    private static final int VERSAO_BD = 2;
+    private static final int VERSAO_BD = 3;
 
     public static final String TABELA_MUNICIPAL = "municipal";
     public static final String COLUNA_IDM = "_id"; /*Chave primária para tabela municipal*/
@@ -30,8 +30,8 @@ public class BD extends SQLiteOpenHelper{
     public static final String COLUNA_SIGLA = "sigla";
     public static final String COLUNA_CONTATO = "contato";
 
-    public static final String TABELA_HORARIOS = "empresa";
-    public static final String COLUNA_IDH = "_id"; /*Chave primária para tabela */
+    public static final String TABELA_HORARIOS = "horarios";
+    public static final String COLUNA_IDH = "_id"; /*Chave primária para tabela horarios*/
     public static final String COLUNA_CODIGO_HORARIO = "codigo_horario";
     public static final String COLUNA_SEGUNDA = "segunda";
     public static final String COLUNA_TERÇA = "terça";
@@ -40,8 +40,6 @@ public class BD extends SQLiteOpenHelper{
     public static final String COLUNA_SEXTA = "sexta";
     public static final String COLUNA_SABADO = "sabado";
     public static final String COLUNA_DOMINGO = "domingo";
-
-
 
 
 
