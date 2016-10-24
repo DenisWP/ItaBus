@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtPesquisarH"
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:hint="@string/edtPesquisar"/>
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:id="@+id/imagePesquisarH"
+            android:layout_weight="1"
+            android:onClick="pesquisarHorarios"/>
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/edtCodigoH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtCodigo"/>
+    <EditText
+        android:id="@+id/edtSegunda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtSegunda"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+    <EditText
+        android:id="@+id/edtTerça"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtTerça"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+    <EditText
+        android:id="@+id/edtQuarta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtQuarta"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+    <EditText
+        android:id="@+id/edtQuinta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtQuinta"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+    <EditText
+        android:id="@+id/edtSexta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtSexta"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+    <EditText
+        android:id="@+id/edtSabado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtSabado"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+    <EditText
+        android:id="@+id/edtDomingo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtDomingo"
+        android:inputType="textMultiLine"
+        android:lines="2"/>
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Gravar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bGravarH"
+            android:layout_weight="1"
+            android:onClick="salvarHorarios"/>
+
+        <Button
+            android:text="Excluir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bExcluirH"
+            android:layout_weight="1"
+            android:onClick="excluirHorarios"/>
+
+        <Button
+            android:text="Voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bVoltarH"
+            android:layout_weight="1"
+            android:onClick="voltarM"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
