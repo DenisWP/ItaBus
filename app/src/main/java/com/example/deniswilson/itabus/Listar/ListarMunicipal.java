@@ -1,5 +1,6 @@
 package com.example.deniswilson.itabus.Listar;
 
+import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.widget.*;
 import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
+import com.example.deniswilson.itabus.MainActivity;
+import com.example.deniswilson.itabus.MainActivityInfo;
 import com.example.deniswilson.itabus.R;
 
 /**
@@ -75,9 +78,24 @@ public class ListarMunicipal extends ActionBarActivity implements AdapterView.On
 
         }
 
+    /*
+    * Quando clicar em um bairro, irá carregar abrir uma nova act, com todas as informações.
+    * */
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+             /*
+        * adapterView: RETORNA REFERENCIA PARA O OBJETO ADAPTER (GETADAPTER)
+        * view: RETORNA A REFERENCIA DO COMPONENTE LISTVIEW
+        * I: POSIÇÃO DO ITEM SELECIONADO
+        * long: ID DA LINHA* */
 
+        /*Passando paramentros com a mesma classe it*/
+
+
+
+        Intent irInfo = new Intent();
+        irInfo.setClass(this, MainActivityInfo.class ); //Setar a classe
+        startActivity(irInfo); // Iniciar a intent
     }
 
     /*Classe para implementar uma interface, para capturar os dados que serão digitados

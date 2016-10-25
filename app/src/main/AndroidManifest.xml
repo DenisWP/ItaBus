@@ -19,6 +19,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".MainActivityInfo">
+        </activity>
+
         <activity android:name=".Administrador.ActCadMunicipal"> </activity>
         <activity android:name=".Administrador.ActCadEmpresa"> </activity>
         <activity android:name=".Administrador.ActCadHorarios"> </activity>

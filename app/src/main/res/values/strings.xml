@@ -11,6 +11,11 @@
         <item>Pesquisar</item>
     </string-array>
 
+    <string-array name="titulos_tag_pesqInfo">
+        <item>Horários</item>
+        <item>Informações</item>
+    </string-array>
+
                     <!-- MUNICIPAL -->
     <string name="btagM_pesqbairro">Pesquisar por Bairro</string>
     <string name="btagM_pesqonibus">Pesquisar por Linha</string>
