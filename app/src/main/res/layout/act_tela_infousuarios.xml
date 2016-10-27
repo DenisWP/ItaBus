@@ -1,5 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true">
 
-</RelativeLayout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="71dp"
+            android:id="@+id/txtCodigo" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCodigo"
+            android:layout_alignRight="@+id/txtCodigo"
+            android:layout_alignEnd="@+id/txtCodigo"
+            android:layout_marginTop="22dp"
+            android:id="@+id/txtBairro" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtBairro"
+            android:layout_alignLeft="@+id/txtBairro"
+            android:layout_alignStart="@+id/txtBairro"
+            android:layout_marginTop="26dp"
+            android:id="@+id/txtItinerario" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtItinerario"
+            android:layout_alignLeft="@+id/txtItinerario"
+            android:layout_alignStart="@+id/txtItinerario"
+            android:layout_marginTop="33dp"
+            android:id="@+id/txtParadas" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/txtParadas"
+            android:layout_alignStart="@+id/txtParadas"
+            android:id="@+id/txtValorPassagem" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtValorPassagem"
+            android:layout_alignLeft="@+id/txtValorPassagem"
+            android:layout_alignStart="@+id/txtValorPassagem"
+            android:layout_marginTop="34dp"
+            android:id="@+id/txtAcessoPcd" />
+
+    </RelativeLayout>
+</ScrollView>
+

@@ -12,12 +12,14 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
 
+import com.example.deniswilson.itabus.Administrador.ActCadMunicipal;
 import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
 import com.example.deniswilson.itabus.MainActivity;
 import com.example.deniswilson.itabus.MainActivityInfo;
 import com.example.deniswilson.itabus.R;
+import com.example.deniswilson.itabus.Tabs.InfoUsuarios;
 
 /**
  * Created by Denis Wilson on 12/10/2016.
@@ -91,11 +93,16 @@ public class ListarMunicipal extends ActionBarActivity implements AdapterView.On
 
         /*Passando paramentros com a mesma classe it*/
 
+        Municipal municipal = adpMunicipal.getItem(i);
+
+        Intent it = new Intent(this, MainActivityInfo.class);
+        /*Passando paramentros com a mesma classe it*/
+
+        it.putExtra(BD.TABELA_MUNICIPAL, municipal);
 
 
-        Intent irInfo = new Intent();
-        irInfo.setClass(this, MainActivityInfo.class ); //Setar a classe
-        startActivity(irInfo); // Iniciar a intent
+        startActivityForResult(it, 0);
+
     }
 
     /*Classe para implementar uma interface, para capturar os dados que serão digitados
