@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.deniswilson.itabus.R;
 
@@ -14,11 +15,21 @@ import com.example.deniswilson.itabus.R;
  */
 
 public class InfoHorarios extends Fragment{
+
+    ListView listHorarios;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.act_tela_infohorarios, container, false);
 
+
+        listHorarios = (ListView) rootView.findViewById(R.id.listHorarios);
+
+
+
         return rootView;
     }
+
+
 }

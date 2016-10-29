@@ -16,6 +16,7 @@ import com.example.deniswilson.itabus.Administrador.ActCadEmpresa;
 import com.example.deniswilson.itabus.Administrador.ActCadHorarios;
 import com.example.deniswilson.itabus.Administrador.ActCadMunicipal;
 import com.example.deniswilson.itabus.TabsPageAdapter.PageAdapter;
+import com.example.deniswilson.itabus.TabsPageAdapter.PageAdapterInfo;
 
 public class MainActivityInfo extends AppCompatActivity {
 
@@ -37,7 +38,7 @@ public class MainActivityInfo extends AppCompatActivity {
         * e pegando as strings atraves do método getResources, e acesso os métodos
         * e pego o array de strings.
         * */
-        viewpagerInfo.setAdapter(new PageAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.titulos_tag_pesqInfo)));
+        viewpagerInfo.setAdapter(new PageAdapterInfo(getSupportFragmentManager(), getResources().getStringArray(R.array.titulos_tag_pesqInfo)));
         /*
         *dizendo para o tablayout, que ele irá trabalhar junto com o view pager.
         * */
@@ -54,39 +55,4 @@ public class MainActivityInfo extends AppCompatActivity {
             }
         });
     }
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true; /*Falso para versão usuário
-    }*/
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //Comparação para chamar as classes específicas.
-        if (id == R.id.menu_cadMunicipal) {
-            Intent irCadM = new Intent();
-            irCadM.setClass(this, ActCadMunicipal.class); //Setar a classe cadCliente
-            startActivity(irCadM); // I
-        }else {
-            if (id == R.id.menu_cadEmpresa){
-                Intent irCadI = new Intent();
-                irCadI.setClass(this, ActCadEmpresa.class); //Setar a classe cadCliente
-                startActivity(irCadI); //
-            }else {
-                if(id == R.id.menu_cadHorarios){
-                    Intent irCadH = new Intent();
-                    irCadH.setClass(this,ActCadHorarios.class);
-                    startActivity(irCadH);
-                }
-            }
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 }

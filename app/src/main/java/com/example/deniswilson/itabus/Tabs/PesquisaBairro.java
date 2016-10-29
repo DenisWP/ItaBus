@@ -1,6 +1,7 @@
 package com.example.deniswilson.itabus.Tabs;
 
 
+import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
 import com.example.deniswilson.itabus.Listar.ListarMunicipal;
+import com.example.deniswilson.itabus.MainActivityInfo;
 import com.example.deniswilson.itabus.R;
 
 /**
@@ -86,6 +88,24 @@ public class PesquisaBairro extends Fragment implements AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                  /*
+        * adapterView: RETORNA REFERENCIA PARA O OBJETO ADAPTER (GETADAPTER)
+        * view: RETORNA A REFERENCIA DO COMPONENTE LISTVIEW
+        * I: POSIÇÃO DO ITEM SELECIONADO
+        * long: ID DA LINHA* */
+
+        /*Passando paramentros com a mesma classe it*/
+
+        Municipal municipal = adpMunicipal.getItem(i);
+
+        Intent it = new Intent(getActivity(), MainActivityInfo.class);
+        /*Passando paramentros com a mesma classe it*/
+
+        it.putExtra(BD.TABELA_MUNICIPAL, municipal);
+
+
+        startActivityForResult(it, 0);
 
     }
 

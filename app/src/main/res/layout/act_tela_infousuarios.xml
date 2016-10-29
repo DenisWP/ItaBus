@@ -1,80 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentTop="true">
+
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
+
+        <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:id="@+id/txtCodigo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="64dp" />
 
         <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="28dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="71dp"
-            android:id="@+id/txtCodigo" />
-
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtBairro"
             android:layout_below="@+id/txtCodigo"
-            android:layout_alignRight="@+id/txtCodigo"
-            android:layout_alignEnd="@+id/txtCodigo"
-            android:layout_marginTop="22dp"
-            android:id="@+id/txtBairro" />
+            android:layout_alignLeft="@+id/txtCodigo"
+            android:layout_alignStart="@+id/txtCodigo"
+            android:layout_marginTop="46dp" />
 
-        <TextView
+    <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/txtItinerario"
             android:layout_below="@+id/txtBairro"
             android:layout_alignLeft="@+id/txtBairro"
             android:layout_alignStart="@+id/txtBairro"
-            android:layout_marginTop="26dp"
-            android:id="@+id/txtItinerario" />
+            android:layout_marginTop="61dp" />
 
         <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/txtParadas"
+            android:layout_marginTop="64dp"
+            android:layout_below="@+id/txtAcessoPcd"
+            android:layout_alignLeft="@+id/txtAcessoPcd"
+            android:layout_alignStart="@+id/txtAcessoPcd" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAcessoPcd"
+            android:layout_marginTop="56dp"
             android:layout_below="@+id/txtItinerario"
             android:layout_alignLeft="@+id/txtItinerario"
-            android:layout_alignStart="@+id/txtItinerario"
-            android:layout_marginTop="33dp"
-            android:id="@+id/txtParadas" />
+            android:layout_alignStart="@+id/txtItinerario" />
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/txtParadas"
-            android:layout_alignStart="@+id/txtParadas"
-            android:id="@+id/txtValorPassagem" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtValorPassagem"
+        android:layout_alignBaseline="@+id/txtCodigo"
+        android:layout_alignBottom="@+id/txtCodigo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="103dp"
+        android:layout_marginEnd="103dp" />
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtValorPassagem"
-            android:layout_alignLeft="@+id/txtValorPassagem"
-            android:layout_alignStart="@+id/txtValorPassagem"
-            android:layout_marginTop="34dp"
-            android:id="@+id/txtAcessoPcd" />
+</RelativeLayout>
 
-    </RelativeLayout>
-</ScrollView>
 

@@ -19,16 +19,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivityInfo">
+        <activity android:name=".MainActivityInfo"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity android:name=".Administrador.ActCadMunicipal"> </activity>
         <activity android:name=".Administrador.ActCadEmpresa"> </activity>
         <activity android:name=".Administrador.ActCadHorarios"> </activity>
-        <activity android:name=".Tabs.Inicio" />
+
 
         <activity android:name=".Listar.ListarMunicipal"> </activity>
-        <activity android:name=".Tabs.PesquisaBairro" />
+
 
     </application>
 
