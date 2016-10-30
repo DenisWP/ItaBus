@@ -1,5 +1,7 @@
 package com.example.deniswilson.itabus.Tabs;
 
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,7 @@ import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Horarios;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
+import com.example.deniswilson.itabus.Mapas.ActRotasMaps;
 import com.example.deniswilson.itabus.R;
 
 import java.util.ArrayList;
@@ -37,7 +41,7 @@ public class InfoUsuarios extends Fragment {
     public static String h; /*Preciso saber o código do horário para gerar a Lista de Horários da tabela Horário*/
 
     TextView txtCodigo, txtBairro, txtItinerario, txtParadas, txtValorPassagem, txtAcessoPcd;
-
+    ImageButton imgRotas;
 
     @Nullable
     @Override
@@ -50,6 +54,21 @@ public class InfoUsuarios extends Fragment {
         txtParadas = (TextView) rootView.findViewById(R.id.txtParadas);
         txtValorPassagem = (TextView) rootView.findViewById(R.id.txtValorPassagem);
         txtAcessoPcd = (TextView) rootView.findViewById(R.id.txtAcessoPcd);
+
+        /*
+        * Método onClick para a imagem de rotas. Funcionando.
+        * */
+        imgRotas = (ImageButton) rootView.findViewById(R.id.imgRotas); /*Imagem para activity das rotas*/
+        imgRotas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent irMaps = new Intent();
+                irMaps.setClass(getActivity(), ActRotasMaps.class ); //Setar a classe
+                startActivity(irMaps); // Iniciar a intent
+            }
+        });
+
+
 
         /*Recuperando os dados*/
         Bundle bundle = getActivity().getIntent().getExtras();
@@ -84,12 +103,4 @@ public class InfoUsuarios extends Fragment {
         txtValorPassagem.setText(municipal.getValorPassagem());
         txtAcessoPcd.setText(municipal.getAcessoPcd());
     }
-
-
-
-    public String F(){
-        String h = municipal.getHorarios();
-        return h;
-    }
-
 }

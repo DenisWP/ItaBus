@@ -26,9 +26,8 @@
         <activity android:name=".Administrador.ActCadMunicipal"> </activity>
         <activity android:name=".Administrador.ActCadEmpresa"> </activity>
         <activity android:name=".Administrador.ActCadHorarios"> </activity>
-
-
         <activity android:name=".Listar.ListarMunicipal"> </activity>
+        <activity android:name=".Mapas.ActRotasMaps"></activity>
 
 
     </application>
