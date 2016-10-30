@@ -16,12 +16,12 @@
         <item>Informações</item>
     </string-array>
 
-                    <!-- MUNICIPAL -->
+    <!-- MUNICIPAL -->
     <string name="btagM_pesqbairro">Pesquisar por Bairro</string>
     <string name="btagM_pesqonibus">Pesquisar por Linha</string>
     <string name="edtBairro">Bairro</string>
 
-                    <!-- EMPRESA -->
+    <!-- EMPRESA -->
     <string name="btagI_pesqcidade">Pesquisar por Cidade</string>
     <string name="btagI_pesqempresas">Pesquisar por Empresas</string>
     <string name="edtCidade">Cidade</string>
@@ -30,7 +30,7 @@
     <string name="edtSiglaE">Sigla da Empresa</string>
     <string name="edtContatoE">Contato</string>
 
-                    <!-- HORÁRIOS -->
+    <!-- HORÁRIOS -->
     <string name="edtSegunda">Segunda-feira</string>
     <string name="edtTerça">Terça-feira</string>
     <string name="edtQuarta">Quarta-feira</string>
@@ -39,7 +39,7 @@
     <string name="edtSabado">Sábado</string>
     <string name="edtDomingo">Domingo e Feriados</string>
 
-                    <!-- PARA AS DUAS OPÇÕES -->
+    <!-- PARA AS DUAS OPÇÕES -->
     <string name="edtPesquisar">PESQUISAR</string>
     <string name="edtCodigo">Código</string>
     <string name="edtHoriarios">Horários</string>
@@ -47,5 +47,6 @@
     <string name="edtParadas">Paradas</string>
     <string name="edtValorPassagem">Valor da passagem</string>
     <string name="edtAcesso">Acesso PCD</string>
+    <string name="title_activity_rotas_maps">Map</string>
 
 </resources>

@@ -43,16 +43,5 @@ public class MainActivityInfo extends AppCompatActivity {
         *dizendo para o tablayout, que ele irá trabalhar junto com o view pager.
         * */
         infotablayout.setupWithViewPager(viewpagerInfo);
-
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabinfo);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 }

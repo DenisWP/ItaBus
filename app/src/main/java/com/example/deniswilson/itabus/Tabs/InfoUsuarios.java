@@ -1,11 +1,8 @@
 package com.example.deniswilson.itabus.Tabs;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -14,17 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.deniswilson.itabus.Administrador.BD;
-import com.example.deniswilson.itabus.Administrador.Horarios;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
-import com.example.deniswilson.itabus.Mapas.ActRotasMaps;
+import com.example.deniswilson.itabus.Mapas.RotasMaps;
 import com.example.deniswilson.itabus.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Denis Wilson on 24/10/2016.
@@ -63,7 +55,7 @@ public class InfoUsuarios extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent irMaps = new Intent();
-                irMaps.setClass(getActivity(), ActRotasMaps.class ); //Setar a classe
+                irMaps.setClass(getActivity(), RotasMaps.class ); //Setar a classe
                 startActivity(irMaps); // Iniciar a intent
             }
         });
