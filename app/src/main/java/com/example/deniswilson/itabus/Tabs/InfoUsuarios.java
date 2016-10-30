@@ -34,6 +34,7 @@ public class InfoUsuarios extends Fragment {
     private BD database;
     private Interacoes interacoes;
     private SQLiteDatabase conexao;
+    public static String h; /*Preciso saber o código do horário para gerar a Lista de Horários da tabela Horário*/
 
     TextView txtCodigo, txtBairro, txtItinerario, txtParadas, txtValorPassagem, txtAcessoPcd;
 
@@ -54,8 +55,8 @@ public class InfoUsuarios extends Fragment {
         Bundle bundle = getActivity().getIntent().getExtras();
         if((bundle != null) && (bundle.containsKey(BD.TABELA_MUNICIPAL))){
             municipal = (Municipal) bundle.getSerializable(BD.TABELA_MUNICIPAL);
-            exibirDados();
-            horario();
+            h = municipal.getHorarios(); //Apenas para pegar o código do horário atribuído ao item deste click.
+            exibirDados(); /*Exibindo os dados na tela de informações*/
         }else {
             municipal = new Municipal();
         }
@@ -84,8 +85,11 @@ public class InfoUsuarios extends Fragment {
         txtAcessoPcd.setText(municipal.getAcessoPcd());
     }
 
-    public String  horario(){
+
+
+    public String F(){
         String h = municipal.getHorarios();
         return h;
     }
+
 }

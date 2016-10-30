@@ -18,6 +18,9 @@ import com.example.deniswilson.itabus.Administrador.Horarios;
 import com.example.deniswilson.itabus.Administrador.Municipal;
 import com.example.deniswilson.itabus.R;
 
+import static com.example.deniswilson.itabus.Tabs.InfoUsuarios.h;
+
+
 /**
  * Created by Denis Wilson on 24/10/2016.
  */
@@ -53,12 +56,14 @@ public class InfoHorarios extends Fragment{
     public void exibirHorario(){
         try {
 
-            InfoUsuarios horario = new InfoUsuarios(); // Chamando a classe.
-            String codHorario = horario.horario(); // chamando a função que guarda o valor do horário.
+            InfoUsuarios horario = new InfoUsuarios(); // Chamando a classe, para pegar o código do horário
+            String codHorario = horario.h; // Pegando o código do horário recebido na classe InfoUsuarios, e atribuindo a uma variável.
 
             database = new BD(getActivity()); // Criando a referencia do banco.
             conexao = database.getWritableDatabase();
-
+            /*
+            * Fazendo o select na tabela horário e listando todos os horários cadastrados.
+            * */
             Cursor cursor = conexao.rawQuery("SELECT "  +BD.COLUNA_IDH+","
                                                         +BD.COLUNA_CODIGO_HORARIO+","
                                                         +BD.COLUNA_SEGUNDA+","
@@ -69,7 +74,7 @@ public class InfoHorarios extends Fragment{
                                                         +BD.COLUNA_SABADO+","
                                                         +BD.COLUNA_DOMINGO+
                                                         " FROM " +BD.TABELA_HORARIOS+" WHERE "
-                                                        +BD.COLUNA_CODIGO_HORARIO+" = " + codHorario, null);
+                                                        +BD.COLUNA_CODIGO_HORARIO+" = " +codHorario, null);
 
             if (cursor.moveToFirst()) {
 
