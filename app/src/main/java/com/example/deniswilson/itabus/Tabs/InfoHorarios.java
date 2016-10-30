@@ -1,13 +1,21 @@
 package com.example.deniswilson.itabus.Tabs;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.deniswilson.itabus.Administrador.BD;
+import com.example.deniswilson.itabus.Administrador.Horarios;
+import com.example.deniswilson.itabus.Administrador.Municipal;
 import com.example.deniswilson.itabus.R;
 
 /**
@@ -16,19 +24,75 @@ import com.example.deniswilson.itabus.R;
 
 public class InfoHorarios extends Fragment{
 
-    ListView listHorarios;
+    TextView txvSegunda, txvTerça, txvQuarta, txvQuinta, txvSexta, txvSabado, txvDomingo;
+
+
+    private Horarios horarios = new Horarios();
+    private BD database;
+    private SQLiteDatabase conexao;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.act_tela_infohorarios, container, false);
 
+        txvSegunda = (TextView) rootView.findViewById(R.id.txvSegunda);
+        txvTerça = (TextView) rootView.findViewById(R.id.txvTerça);
+        txvQuarta = (TextView) rootView.findViewById(R.id.txvQuarta);
+        txvQuinta = (TextView) rootView.findViewById(R.id.txvQuinta);
+        txvSexta = (TextView) rootView.findViewById(R.id.txvSexta);
+        txvSabado = (TextView) rootView.findViewById(R.id.txvSabado);
+        txvDomingo = (TextView) rootView.findViewById(R.id.txvDomingo);
 
-        listHorarios = (ListView) rootView.findViewById(R.id.listHorarios);
 
-
+        exibirHorario();
 
         return rootView;
+    }
+
+    public void exibirHorario(){
+        try {
+
+            InfoUsuarios horario = new InfoUsuarios(); // Chamando a classe.
+            String codHorario = horario.horario(); // chamando a função que guarda o valor do horário.
+
+            database = new BD(getActivity()); // Criando a referencia do banco.
+            conexao = database.getWritableDatabase();
+
+            Cursor cursor = conexao.rawQuery("SELECT "  +BD.COLUNA_IDH+","
+                                                        +BD.COLUNA_CODIGO_HORARIO+","
+                                                        +BD.COLUNA_SEGUNDA+","
+                                                        +BD.COLUNA_TERÇA+","
+                                                        +BD.COLUNA_QUARTA+","
+                                                        +BD.COLUNA_QUINTA+","
+                                                        +BD.COLUNA_SEXTA +","
+                                                        +BD.COLUNA_SABADO+","
+                                                        +BD.COLUNA_DOMINGO+
+                                                        " FROM " +BD.TABELA_HORARIOS+" WHERE "
+                                                        +BD.COLUNA_CODIGO_HORARIO+" = " + codHorario, null);
+
+            if (cursor.moveToFirst()) {
+
+                horarios.setId(cursor.getLong(0));
+                txvSegunda.setText(cursor.getString(1));
+                txvTerça.setText(cursor.getString(2));
+                txvQuarta.setText(cursor.getString(3));
+                txvQuinta.setText(cursor.getString(4));
+                txvSexta.setText(cursor.getString(5));
+                txvSabado.setText(cursor.getString(6));
+                txvDomingo.setText(cursor.getString(7));
+
+
+            }else {
+                Toast.makeText(getActivity(), "Erro ao exibir horários.", Toast.LENGTH_SHORT).show();
+            }conexao.close();
+
+        }catch (Exception e){
+            AlertDialog.Builder dlg = new AlertDialog.Builder(getActivity());
+            dlg.setMessage("Erro !" + e.getMessage()); //Retornando o erro que ocorrer.
+            dlg.setNeutralButton("OK", null);
+            dlg.show();
+        }
     }
 
 

@@ -104,7 +104,6 @@ public class PesquisaBairro extends Fragment implements AdapterView.OnItemClickL
 
         it.putExtra(BD.TABELA_MUNICIPAL, municipal);
 
-
         startActivityForResult(it, 0);
 
     }

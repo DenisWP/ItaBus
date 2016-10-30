@@ -1,5 +1,6 @@
 package com.example.deniswilson.itabus.Tabs;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -10,11 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.deniswilson.itabus.Administrador.BD;
+import com.example.deniswilson.itabus.Administrador.Horarios;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
 import com.example.deniswilson.itabus.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Denis Wilson on 24/10/2016.
@@ -24,7 +30,7 @@ import com.example.deniswilson.itabus.R;
 
 public class InfoUsuarios extends Fragment {
 
-    private Municipal municipal;
+    public  Municipal municipal;
     private BD database;
     private Interacoes interacoes;
     private SQLiteDatabase conexao;
@@ -49,6 +55,7 @@ public class InfoUsuarios extends Fragment {
         if((bundle != null) && (bundle.containsKey(BD.TABELA_MUNICIPAL))){
             municipal = (Municipal) bundle.getSerializable(BD.TABELA_MUNICIPAL);
             exibirDados();
+            horario();
         }else {
             municipal = new Municipal();
         }
@@ -75,5 +82,10 @@ public class InfoUsuarios extends Fragment {
         txtParadas.setText(municipal.getParadas());
         txtValorPassagem.setText(municipal.getValorPassagem());
         txtAcessoPcd.setText(municipal.getAcessoPcd());
+    }
+
+    public String  horario(){
+        String h = municipal.getHorarios();
+        return h;
     }
 }

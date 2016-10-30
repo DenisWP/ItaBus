@@ -2,11 +2,77 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="59dp"
+        android:id="@+id/txvSegunda" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txvSegunda"
+        android:layout_alignLeft="@+id/txvSegunda"
+        android:layout_alignStart="@+id/txvSegunda"
+        android:layout_marginTop="36dp"
+        android:id="@+id/txvTerça" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txvTerça"
+        android:layout_alignLeft="@+id/txvTerça"
+        android:layout_alignStart="@+id/txvTerça"
+        android:layout_marginTop="39dp"
+        android:id="@+id/txvQuarta" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txvQuinta"
+        android:layout_alignLeft="@+id/txvQuinta"
+        android:layout_alignStart="@+id/txvQuinta"
+        android:layout_marginTop="41dp"
+        android:id="@+id/txvSexta" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:id="@+id/listHorarios" />
+        android:layout_alignRight="@+id/txvSabado"
+        android:layout_alignEnd="@+id/txvSabado"
+        android:layout_marginBottom="47dp"
+        android:id="@+id/txvDomingo" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txvQuinta"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/txvQuarta"
+        android:layout_alignStart="@+id/txvQuarta" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txvSabado"
+        android:layout_below="@+id/txvSexta"
+        android:layout_alignLeft="@+id/txvSexta"
+        android:layout_alignStart="@+id/txvSexta"
+        android:layout_marginTop="49dp" />
+
+
 </RelativeLayout>
