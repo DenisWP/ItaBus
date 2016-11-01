@@ -43,10 +43,10 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyAwIdYiOLMG59cdXsB93MaJcT2-e2qZY3o"/>
 
         <activity
-            android:name=".Mapas.RotasMaps"
+            android:name=".Mapas.Mapas"
             android:label="@string/title_activity_rotas_maps">
         </activity>
     </application>

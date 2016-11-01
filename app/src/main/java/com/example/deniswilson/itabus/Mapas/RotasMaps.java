@@ -2,6 +2,8 @@ package com.example.deniswilson.itabus.Mapas;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.deniswilson.itabus.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -11,34 +13,30 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class RotasMaps extends FragmentActivity implements OnMapReadyCallback {
+public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+    /*FragmentActivity, é para usar em versões anteriores dos aplicativos. */
+    private GoogleMap mMap; /*Objeto, que contem informações relacionadas ao mapa
+                            definindo coordenadas, marcar posição no mapa.*/
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_rotas_mapas);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        getMapAsync(this);
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
+    /*
+    *  Método implementado pela interface OnMapReadyCallback,
+    *  para realização de procedimentos, como marcação de localização no mapa
+    *  ou outras informações. Método será executado quando o mapa for exibido
+    *
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
