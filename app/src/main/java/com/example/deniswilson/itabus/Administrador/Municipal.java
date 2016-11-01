@@ -1,5 +1,7 @@
 package com.example.deniswilson.itabus.Administrador;
 
+import com.example.deniswilson.itabus.R;
+
 import java.io.Serializable;
 
 /**
@@ -90,5 +92,12 @@ public class Municipal implements Serializable {
     public String toString(){
        // return codigo +" "+ bairro +" "+horarios+" "+itinerarios+" "+paradas+""+valorPassagem+" "+acessoPcd+" ";
         return bairro;
+    }
+
+    public int getImgOnibus(int position) {
+       if (position > 0){
+           return (R.drawable.imgonibus);
+       }else
+           return position;
     }
 }

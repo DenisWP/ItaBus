@@ -9,6 +9,9 @@ import android.database.Cursor;
 import android.database.sqlite.*;
 import android.widget.ArrayAdapter;
 
+import com.example.deniswilson.itabus.Listar.ListaCustomizada;
+import com.example.deniswilson.itabus.R;
+
 public class Interacoes {
 
     private SQLiteDatabase conexao;
@@ -53,9 +56,9 @@ public class Interacoes {
 
     }
 
-    public ArrayAdapter<Municipal> ListarMunicipal(Context context){
+    public ListaCustomizada ListarMunicipal(Context context){
         /*Colocando ClienteArrayAdapter que já foi criada, mudei o arrayadapter<municipal>*/
-        ArrayAdapter<Municipal> adpMunicipal = new ArrayAdapter<Municipal>(context, android.R.layout.simple_list_item_1 );
+        ListaCustomizada adpMunicipal = new ListaCustomizada(context, R.layout.act_listview_customizado);
 
         Cursor cursor = conexao.query(BD.TABELA_MUNICIPAL, null, null, null, null, null, null);
 
