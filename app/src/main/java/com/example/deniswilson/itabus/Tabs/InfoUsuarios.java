@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
+import com.example.deniswilson.itabus.Mapas.Mapas;
 import com.example.deniswilson.itabus.Mapas.RotasMaps;
 import com.example.deniswilson.itabus.R;
 
@@ -55,7 +56,7 @@ public class InfoUsuarios extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent irMaps = new Intent();
-                irMaps.setClass(getActivity(), RotasMaps.class ); //Setar a classe
+                irMaps.setClass(getActivity(), Mapas.class ); //Setar a classe
                 startActivity(irMaps); // Iniciar a intent
             }
         });

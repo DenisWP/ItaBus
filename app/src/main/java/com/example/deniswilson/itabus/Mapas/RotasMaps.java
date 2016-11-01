@@ -1,11 +1,7 @@
 package com.example.deniswilson.itabus.Mapas;
 
-import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 
-import com.example.deniswilson.itabus.R;
+import android.os.Bundle;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -37,9 +33,22 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        // Cidade de Sidney (Teste)
+
+        /*
+        * Habilitando o botão de Zoom*/
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+        LatLng sydney = new LatLng(-33.87365, 151.20689);
+
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(sydney);
+        marker.title("Teste");
+
+        mMap.addMarker(marker);
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+
     }
 }
