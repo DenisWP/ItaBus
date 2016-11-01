@@ -95,7 +95,7 @@ public class Municipal implements Serializable {
     }
 
     public int getImgOnibus(int position) {
-       if (position > 0){
+       if (position >= 0){
            return (R.drawable.imgonibus);
        }else
            return position;
