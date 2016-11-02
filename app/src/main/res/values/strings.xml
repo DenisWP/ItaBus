@@ -47,6 +47,7 @@
     <string name="edtParadas">Paradas</string>
     <string name="edtValorPassagem">Valor da passagem</string>
     <string name="edtAcesso">Acesso PCD</string>
-    <string name="title_activity_rotas_maps">Map</string>
+
+    <string name="title_activity_rotas_maps">ItaBus</string>
 
 </resources>
