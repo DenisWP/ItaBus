@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
+import com.example.deniswilson.itabus.Administrador.Rotas;
 import com.example.deniswilson.itabus.Mapas.Mapas;
 import com.example.deniswilson.itabus.Mapas.RotasMaps;
 import com.example.deniswilson.itabus.R;
@@ -28,10 +29,12 @@ import com.example.deniswilson.itabus.R;
 public class InfoUsuarios extends Fragment {
 
     public  Municipal municipal;
+    public Rotas rotas;
     private BD database;
     private Interacoes interacoes;
     private SQLiteDatabase conexao;
-    public static String h; /*Preciso saber o código do horário para gerar a Lista de Horários da tabela Horário*/
+    public static String horario, latI, longI, latF, longF; /*Preciso saber o código do horário,
+    as latitudes e longitudes para gerar a Lista de Horários e as rotas*/
 
     TextView txtCodigo, txtBairro, txtItinerario, txtParadas, txtValorPassagem, txtAcessoPcd;
     ImageButton imgRotas;
@@ -67,7 +70,16 @@ public class InfoUsuarios extends Fragment {
         Bundle bundle = getActivity().getIntent().getExtras();
         if((bundle != null) && (bundle.containsKey(BD.TABELA_MUNICIPAL))){
             municipal = (Municipal) bundle.getSerializable(BD.TABELA_MUNICIPAL);
-            h = municipal.getHorarios(); //Apenas para pegar o código do horário atribuído ao item deste click.
+
+            /*Pegando o código do horário da tabela transporte, através do ítem após clicar no bairro*/
+            horario = municipal.getHorarios(); //Apenas para pegar o código do horário atribuído ao item deste click.
+
+            /*Pegando as latitudes e longitudes da tabela de rotas, através do ítem após o clicar no bairro*/
+            latI = rotas.getLatitude_inicial();
+            longI = rotas.getLongitude_inicial();
+            latF = rotas.getLatitude_final();
+            longF = rotas.getLongitude_final();
+
             exibirDados(); /*Exibindo os dados na tela de informações*/
         }else {
             municipal = new Municipal();

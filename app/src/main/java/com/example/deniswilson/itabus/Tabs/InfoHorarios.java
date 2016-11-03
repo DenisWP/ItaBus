@@ -18,7 +18,7 @@ import com.example.deniswilson.itabus.Administrador.Horarios;
 import com.example.deniswilson.itabus.Administrador.Municipal;
 import com.example.deniswilson.itabus.R;
 
-import static com.example.deniswilson.itabus.Tabs.InfoUsuarios.h;
+import static com.example.deniswilson.itabus.Tabs.InfoUsuarios.horario;
 
 
 /**
@@ -57,7 +57,7 @@ public class InfoHorarios extends Fragment{
         try {
 
             InfoUsuarios horario = new InfoUsuarios(); // Chamando a classe, para pegar o código do horário
-            String codHorario = horario.h; // Pegando o código do horário recebido na classe InfoUsuarios, e atribuindo a uma variável.
+            String codHorario = horario.horario; // Pegando o código do horário recebido na classe InfoUsuarios, e atribuindo a uma variável.
 
             database = new BD(getActivity()); // Criando a referencia do banco.
             conexao = database.getWritableDatabase();

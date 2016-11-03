@@ -3,6 +3,8 @@ package com.example.deniswilson.itabus.Mapas;
 
 import android.os.Bundle;
 
+import com.example.deniswilson.itabus.Administrador.Rotas;
+import com.example.deniswilson.itabus.Tabs.InfoUsuarios;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,7 +22,6 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
                             definindo coordenadas, marcar posição no mapa.*/
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,21 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+         /*
+        * Instanciando a classe infoUsuarios, e atribuindo os valores static
+        * */
+
+        InfoUsuarios rotas = new InfoUsuarios();
+        String latI, longI, latF, longF;
+
+        latI = rotas.latI;
+        longI = rotas.longI;
+        latF = rotas.latF;
+        longF = rotas.longF;
+
+
+
         mMap = googleMap;
         // Cidade de Sidney (Teste)
 
