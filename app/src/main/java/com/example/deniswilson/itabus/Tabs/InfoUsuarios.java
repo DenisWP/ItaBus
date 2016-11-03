@@ -29,11 +29,10 @@ import com.example.deniswilson.itabus.R;
 public class InfoUsuarios extends Fragment {
 
     public  Municipal municipal;
-    public Rotas rotas;
     private BD database;
     private Interacoes interacoes;
     private SQLiteDatabase conexao;
-    public static String horario, latI, longI, latF, longF; /*Preciso saber o código do horário,
+    public static String horario, rotas; /*Preciso saber o código do horário,
     as latitudes e longitudes para gerar a Lista de Horários e as rotas*/
 
     TextView txtCodigo, txtBairro, txtItinerario, txtParadas, txtValorPassagem, txtAcessoPcd;
@@ -74,11 +73,8 @@ public class InfoUsuarios extends Fragment {
             /*Pegando o código do horário da tabela transporte, através do ítem após clicar no bairro*/
             horario = municipal.getHorarios(); //Apenas para pegar o código do horário atribuído ao item deste click.
 
-            /*Pegando as latitudes e longitudes da tabela de rotas, através do ítem após o clicar no bairro*/
-            latI = rotas.getLatitude_inicial();
-            longI = rotas.getLongitude_inicial();
-            latF = rotas.getLatitude_final();
-            longF = rotas.getLongitude_final();
+            /*Pegando o codigo das rotas após o clicar no bairro*/
+            rotas = municipal.getItinerarios();
 
             exibirDados(); /*Exibindo os dados na tela de informações*/
         }else {

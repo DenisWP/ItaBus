@@ -42,13 +42,10 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
         * Instanciando a classe infoUsuarios, e atribuindo os valores static
         * */
 
-        InfoUsuarios rotas = new InfoUsuarios();
-        String latI, longI, latF, longF;
+        InfoUsuarios codRotas = new InfoUsuarios();
+        String rotas = codRotas.rotas;
 
-        latI = rotas.latI;
-        longI = rotas.longI;
-        latF = rotas.latF;
-        longF = rotas.longF;
+
 
 
 
@@ -83,6 +80,10 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
         /*https://www.youtube.com/watch?v=CCZPUeY94MU*/
     }
 
+
+    public void exibirRotas(){
+        
+    }
 
 
 }
