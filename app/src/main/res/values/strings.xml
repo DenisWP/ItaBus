@@ -3,6 +3,7 @@
     <string name="menu_cadMunicipal">Cad. Municipal</string>
     <string name="menu_cadEmpresa">Cad. Empresa</string>
     <string name="menu_cadHorarios">Cad. Horarios</string>
+    <string name="menu_cadRotas">Cad. Rotas</string>
 
     <string name="botao_acessar">Acessar</string>
 
@@ -38,6 +39,14 @@
     <string name="edtSexta">Sexta-feira</string>
     <string name="edtSabado">Sábado</string>
     <string name="edtDomingo">Domingo e Feriados</string>
+
+    <!-- ROTAS -->
+    <string name="edtCodigoR">Código</string>
+    <string name="edtLatitudeI">Latitude inicial</string>
+    <string name="edtLongitudeI">Longitude inicial</string>
+    <string name="edtLatitudeF">Latitude final</string>
+    <string name="edtLongitudeF">Longitude final</string>
+
 
     <!-- PARA AS DUAS OPÇÕES -->
     <string name="edtPesquisar">PESQUISAR</string>

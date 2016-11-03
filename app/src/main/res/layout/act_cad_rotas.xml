@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edtPesquisarR"
+                android:layout_width="330dp"
+                android:layout_height="match_parent"
+                android:hint="@string/edtPesquisar"/>
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imagePesquisarR"
+                android:layout_weight="1"
+                android:onClick="pesquisarRotas"/>
+        </LinearLayout>
+
+
+
+        <EditText
+            android:id="@+id/edtCodigoR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edtCodigoR"/>
+        <EditText
+            android:id="@+id/edtLatitudeI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edtLatitudeI"/>
+        <EditText
+            android:id="@+id/edtLongitudeI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edtLongitudeI" />
+        <EditText
+            android:id="@+id/edtLatitudeF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edtLatitudeF"/>
+        <EditText
+            android:id="@+id/edtLongitudeF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edtLongitudeF" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="Gravar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bGravarR"
+                android:layout_weight="1"
+                android:onClick="salvarRotas"/>
+
+            <Button
+                android:text="Excluir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bExcluirR"
+                android:layout_weight="1"
+                android:onClick="excluirRotas"/>
+
+            <Button
+                android:text="Voltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bVoltarR"
+                android:layout_weight="1"
+                android:onClick="voltarRotas"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -11,6 +11,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback {
 
@@ -62,6 +63,8 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
         CameraPosition position = new CameraPosition.Builder().target(sydney).zoom(15).build();
         CameraUpdate update = CameraUpdateFactory.newCameraPosition(position);
         mMap.moveCamera(update);
+
+        /*https://www.youtube.com/watch?v=CCZPUeY94MU*/
     }
 
 

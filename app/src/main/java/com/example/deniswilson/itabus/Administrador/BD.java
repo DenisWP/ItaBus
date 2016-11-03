@@ -10,7 +10,7 @@ import android.database.sqlite.*;
 public class BD extends SQLiteOpenHelper{
 
     private static final String NOME_BD = "transporte";
-    private static final int VERSAO_BD = 3;
+    private static final int VERSAO_BD = 4;
 
     public static final String TABELA_MUNICIPAL = "municipal";
     public static final String COLUNA_IDM = "_id"; /*Chave primária para tabela municipal*/
@@ -41,6 +41,13 @@ public class BD extends SQLiteOpenHelper{
     public static final String COLUNA_SABADO = "sabado";
     public static final String COLUNA_DOMINGO = "domingo";
 
+    public static final String TABELA_ROTAS = "rotas";
+    public static final String COLUNA_IDR = "_id"; /*Chave primária para tabela rotas*/
+    public static final String COLUNA_CODIGO_ROTAS = "codigo_rotas";
+    public static final String COLUNA_LATITUDE_INICIAL = "latitude_inicial";
+    public static final String COLUNA_LONGITUDE_INICIAL = "longitude_inicial";
+    public static final String COLUNA_LATITUDE_FINAL = "latitude_final";
+    public static final String COLUNA_LONGITUDE_FINAL = "longitude_final";
 
 
     public BD(Context context){
@@ -86,6 +93,17 @@ public class BD extends SQLiteOpenHelper{
                         + COLUNA_DOMINGO + " TEXT " + " ) "
         );
 
+        bd.execSQL(
+                " CREATE TABLE IF NOT EXISTS "
+                        + TABELA_ROTAS + " ( "
+                        + COLUNA_IDR + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "
+                        + COLUNA_CODIGO_ROTAS + " TEXT, "
+                        + COLUNA_LATITUDE_INICIAL + " TEXT, "
+                        + COLUNA_LONGITUDE_INICIAL + " TEXT, "
+                        + COLUNA_LATITUDE_FINAL + " TEXT, "
+                        + COLUNA_LONGITUDE_FINAL + " TEXT " + " ) "
+        );
+
     }
 
     @Override
@@ -96,6 +114,7 @@ public class BD extends SQLiteOpenHelper{
         bd.execSQL("drop table "+TABELA_MUNICIPAL+ " ");
         bd.execSQL("drop table "+TABELA_EMPRESA+ " ");
         bd.execSQL("drop table "+TABELA_HORARIOS+ " ");
+        bd.execSQL("drop table "+TABELA_ROTAS+ " ");
         onCreate(bd);
     }
 }

@@ -156,4 +156,37 @@ public class Interacoes {
 
     }
 
+
+
+    /*INTERAÇÕES ROTAS*/
+    public void InserirRotas(Rotas rotas){
+        ContentValues dadosRotas = new ContentValues();
+
+        dadosRotas.put(BD.COLUNA_CODIGO_ROTAS, rotas.getCodigo());
+        dadosRotas.put(BD.COLUNA_LATITUDE_INICIAL, rotas.getLatitude_inicial());
+        dadosRotas.put(BD.COLUNA_LONGITUDE_INICIAL, rotas.getLongitude_inicial());
+        dadosRotas.put(BD.COLUNA_LATITUDE_FINAL, rotas.getLatitude_final());
+        dadosRotas.put(BD.COLUNA_LONGITUDE_FINAL, rotas.getLongitude_final());
+
+
+        conexao.insert(BD.TABELA_ROTAS, null, dadosRotas);
+    }
+
+    public void AtualizarRotas(Rotas rotas){
+        ContentValues dadosRotas = new ContentValues();
+
+        dadosRotas.put(BD.COLUNA_CODIGO_ROTAS, rotas.getCodigo());
+        dadosRotas.put(BD.COLUNA_LATITUDE_INICIAL, rotas.getLatitude_inicial());
+        dadosRotas.put(BD.COLUNA_LONGITUDE_INICIAL, rotas.getLongitude_inicial());
+        dadosRotas.put(BD.COLUNA_LATITUDE_FINAL, rotas.getLatitude_final());
+        dadosRotas.put(BD.COLUNA_LONGITUDE_FINAL, rotas.getLongitude_final());
+
+        conexao.update(BD.TABELA_ROTAS, dadosRotas, BD.COLUNA_IDR + " = ? ", new String[]{String.valueOf(rotas.getId())});
+    }
+
+    public void ExcluirRotas (Rotas rotas){
+        conexao.delete(BD.TABELA_ROTAS, BD.COLUNA_IDR + " = ? ",
+                new String[]{String.valueOf(rotas.getId())});
+
+    }
 }

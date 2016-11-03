@@ -2,11 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.deniswilson.itabus.MainActivity">
-    <item
-        android:id="@+id/menu_cadMunicipal"
-        android:orderInCategory="100"
-        android:title="@string/menu_cadMunicipal"
-        app:showAsAction="never" />
 
     <item
         android:id="@+id/menu_cadEmpresa"
@@ -14,10 +9,23 @@
         android:title="@string/menu_cadEmpresa"
         app:showAsAction="never" />
 
+
+    <item
+        android:id="@+id/menu_cadMunicipal"
+        android:orderInCategory="100"
+        android:title="@string/menu_cadMunicipal"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/menu_cadHorarios"
         android:orderInCategory="100"
         android:title="@string/menu_cadHorarios"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_cadRotas"
+        android:orderInCategory="100"
+        android:title="@string/menu_cadRotas"
         app:showAsAction="never" />
 
 </menu>

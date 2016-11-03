@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.example.deniswilson.itabus.Administrador.ActCadEmpresa;
 import com.example.deniswilson.itabus.Administrador.ActCadHorarios;
 import com.example.deniswilson.itabus.Administrador.ActCadMunicipal;
+import com.example.deniswilson.itabus.Administrador.ActCadRotas;
 import com.example.deniswilson.itabus.TabsPageAdapter.PageAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -73,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent irCadH = new Intent();
                     irCadH.setClass(this,ActCadHorarios.class);
                     startActivity(irCadH);
+                }else {
+                    if(id == R.id.menu_cadRotas){
+                        Intent irCadR = new Intent();
+                        irCadR.setClass(this, ActCadRotas.class);
+                        startActivity(irCadR);
+                    }
                 }
             }
         }
