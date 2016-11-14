@@ -5,10 +5,10 @@
 
     <FrameLayout
         android:layout_height="match_parent"
+        android:name = "com.google.android.geo.SupportMapFragment"
         android:id="@+id/exbMapa"
         android:layout_width="match_parent"
         android:layout_alignParentTop="true">
-
 
     </FrameLayout>
 

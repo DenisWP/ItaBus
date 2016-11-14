@@ -22,7 +22,6 @@ public class BD extends SQLiteOpenHelper{
     public static final String COLUNA_VALOR_PASSAGEM = "valor_passagem";
     public static final String COLUNA_ACESSO_PCD = "acesso_pcd";
 
-
     public static final String TABELA_EMPRESA = "empresa";
     public static final String COLUNA_IDE = "_id"; /*Chave primária para tabela empresa*/
     public static final String COLUNA_CODIGO_EMPRESA = "codigo_empresa";
