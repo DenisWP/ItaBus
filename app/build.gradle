@@ -25,6 +25,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.1.1'
+    /*Coloquei a dependencia do Apache, porque não consegui com o HttpURLConection, deve ser besteira o erro*/
+    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     compile 'com.android.support:design:24.1.1'
     compile 'com.google.android.gms:play-services:9.4.0'
     testCompile 'junit:junit:4.12'
