@@ -73,16 +73,18 @@
         android:layout_marginEnd="103dp" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_width="80dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="26dp"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="15dp"
-        android:id="@+id/imgRotas"/>
+        android:scaleType="fitCenter"
+        android:background="@null"
+        android:id="@+id/imgRotas"
+        android:src="@drawable/rotamaps"
+        android:layout_height="80dp" />
 
     </RelativeLayout>
 

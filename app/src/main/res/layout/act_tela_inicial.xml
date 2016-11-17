@@ -5,6 +5,7 @@
 
 
     <ImageView
+        android:background="@null"
         android:layout_width="match_parent"
         app:srcCompat="@drawable/itabustranp"
         android:id="@+id/imgInicial"

@@ -20,6 +20,7 @@
             android:layout_height="50dp"
             android:hint="@string/edtPesquisar"/>
         <ImageButton
+            android:id="@+id/imagePesquisarM"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/lupapesq"
@@ -92,7 +93,7 @@
             android:id="@+id/bExcluirM"
             android:layout_weight="1"
             android:onClick="excluirMunicipal"
-            android:background="#72b6af " />
+            android:background="#72b6af" />
 
         <Button
             android:text="Voltar"
