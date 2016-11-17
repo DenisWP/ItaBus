@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <Button
-        android:text="@string/botao_acessar"
+
+    <ImageView
+        android:layout_width="match_parent"
+        app:srcCompat="@drawable/itabustranp"
+        android:id="@+id/imgInicial"
+        android:layout_height="200dp"
+        android:layout_marginTop="92dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="INFORMAÇÕES DO SEU ÔNIBUS ? "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:id="@+id/botao_acessar"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/txv1"
+        android:textColor="#008B8B"
+        android:elevation="1dp"
+        android:elegantTextHeight="false"
+        android:textSize="20dp"
+        android:layout_below="@+id/imgInicial"
         android:layout_centerHorizontal="true"
-        android:onClick="IrMainActivity"/>
+        android:textStyle="bold"/>
+
+    <TextView
+        android:text="TÁ NA MÃO !"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:id="@+id/tcv2"
+        android:textColor="#008B8B"
+        android:textSize="25dp"
+        android:layout_below="@+id/txv1"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
 </RelativeLayout>

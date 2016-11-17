@@ -94,10 +94,10 @@ public class Municipal implements Serializable {
         return bairro;
     }
 
-    public int getImgOnibus(int position) {
+   /* public int getImgOnibus(int position) {
        if (position >= 0){
-           return (R.drawable.imgonibus);
+           return (R.drawable.onibus);
        }else
            return position;
-    }
+    }*/
 }

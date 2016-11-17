@@ -12,18 +12,21 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
         <EditText
             android:id="@+id/edtPesquisarE"
-            android:layout_width="330dp"
-            android:layout_height="match_parent"
-            android:hint="@string/edtPesquisar"/>
+            android:layout_height="50dp"
+            android:hint="@string/edtPesquisar"
+            android:layout_width="320dp" />
+
         <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/lupapesq"
+            android:scaleType="fitCenter"
+            android:background="@null"
             android:id="@+id/imagePesquisarE"
-            android:layout_weight="1"
             android:onClick="pesquisarEmpresa"/>
     </LinearLayout>
 
@@ -63,7 +66,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/bGravarE"
             android:layout_weight="1"
-            android:onClick="salvarEmpresa"/>
+            android:onClick="salvarEmpresa"
+            android:background="#36978e" />
 
         <Button
             android:text="Excluir"
@@ -71,7 +75,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/bExcluirE"
             android:layout_weight="1"
-            android:onClick="excluirEmpresa"/>
+            android:onClick="excluirEmpresa"
+            android:background="#72b6af" />
 
         <Button
             android:text="Voltar"
@@ -79,7 +84,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/bVoltarE"
             android:layout_weight="1"
-            android:onClick="voltarM"/>
+            android:onClick="voltarM"
+            android:background="#36978e" />
 
     </LinearLayout>
 
