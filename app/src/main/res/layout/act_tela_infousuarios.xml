@@ -131,20 +131,36 @@
             android:id="@+id/txtAcessoPcd"/>
     </LinearLayout>
 
-    <ImageButton
-        android:layout_below="@+id/llsexto"
-        android:layout_width="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="15dp"
-        android:scaleType="fitCenter"
-        android:background="@null"
-        android:id="@+id/imgRotas"
-        android:src="@drawable/rotamaps"
-        android:layout_height="80dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/llsexto">
+
+            <ImageButton
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:id="@+id/imgRotas"
+                android:src="@drawable/rotamaps"/>
+
+            <Button
+                android:text="Voltar"
+                android:layout_below="@+id/imgRotas"
+                android:layout_gravity="center"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/voltarInicio"
+                android:layout_weight="1"
+                android:background="#36978e" />
+
+
+
+        </LinearLayout>
+
+
 
 </RelativeLayout>
 </ScrollView>

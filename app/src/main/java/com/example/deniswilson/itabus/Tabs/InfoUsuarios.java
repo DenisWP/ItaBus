@@ -9,13 +9,16 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Interacoes;
 import com.example.deniswilson.itabus.Administrador.Municipal;
 import com.example.deniswilson.itabus.Administrador.Rotas;
+import com.example.deniswilson.itabus.MainActivity;
 import com.example.deniswilson.itabus.Mapas.Mapas;
 import com.example.deniswilson.itabus.Mapas.RotasMaps;
 import com.example.deniswilson.itabus.R;
@@ -37,6 +40,7 @@ public class InfoUsuarios extends Fragment {
 
     TextView txtCodigo, txtBairro, txtTrajeto, txtItinerario, txtParadas, txtValorPassagem, txtAcessoPcd;
     ImageButton imgRotas;
+    Button voltarInicio;
 
     @Nullable
     @Override
@@ -51,6 +55,7 @@ public class InfoUsuarios extends Fragment {
         txtValorPassagem = (TextView) rootView.findViewById(R.id.txtValorPassagem);
         txtAcessoPcd = (TextView) rootView.findViewById(R.id.txtAcessoPcd);
 
+
         /*
         * Método onClick para a imagem de rotas. Funcionando.
         * */
@@ -64,6 +69,19 @@ public class InfoUsuarios extends Fragment {
             }
         });
 
+        /*
+        * Método onClick para voltar a página inicial.
+        * */
+        voltarInicio = (Button) rootView.findViewById(R.id.voltarInicio);
+        voltarInicio.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent irInicio = new Intent();
+                irInicio.setClass(getActivity(), MainActivity.class ); //Setar a classe
+                startActivity(irInicio); // Iniciar a intent
+            }
+        });
+
 
 
         /*Recuperando os dados*/
@@ -74,8 +92,13 @@ public class InfoUsuarios extends Fragment {
             /*Pegando o código do horário da tabela transporte, através do ítem após clicar no bairro*/
             horario = municipal.getHorarios(); //Apenas para pegar o código do horário atribuído ao item deste click.
 
+
             /*Pegando o codigo das rotas após o clicar no bairro*/
             rotas = municipal.getItinerarios();
+
+
+            Toast.makeText(getActivity(), "-> "+horario+ " \n "+rotas+"", Toast.LENGTH_SHORT).show();
+
 
             exibirDados(); /*Exibindo os dados na tela de informações*/
         }else {
@@ -94,6 +117,7 @@ public class InfoUsuarios extends Fragment {
             dlg.show();
         }
 
+
         return rootView;
     }
 
@@ -106,4 +130,5 @@ public class InfoUsuarios extends Fragment {
         txtValorPassagem.setText(municipal.getValorPassagem());
         txtAcessoPcd.setText(municipal.getAcessoPcd());
     }
+
 }

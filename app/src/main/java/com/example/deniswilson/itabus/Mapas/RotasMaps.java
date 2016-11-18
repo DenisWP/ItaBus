@@ -239,7 +239,7 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
                 po.add(list.get(i));
             }
 
-            po.color(Color.BLUE).width(4);
+            po.color(Color.RED).width(10);
             polyline = mMap.addPolyline(po);
         }
         else{
