@@ -88,8 +88,7 @@ public class PesquisaBairro extends Fragment implements AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                  /*
+        /*
         * adapterView: RETORNA REFERENCIA PARA O OBJETO ADAPTER (GETADAPTER)
         * view: RETORNA A REFERENCIA DO COMPONENTE LISTVIEW
         * I: POSIÇÃO DO ITEM SELECIONADO

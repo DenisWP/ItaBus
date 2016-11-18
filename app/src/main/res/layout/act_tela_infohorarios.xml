@@ -1,78 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:id="@+id/ll1"
+        android:layout_marginTop="10dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="37dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="59dp"
-        android:id="@+id/txvSegunda" />
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="SEGUNDA-FEIRA"/>
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvSegunda" />
+    </LinearLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txvSegunda"
-        android:layout_alignLeft="@+id/txvSegunda"
-        android:layout_alignStart="@+id/txvSegunda"
-        android:layout_marginTop="36dp"
-        android:id="@+id/txvTerça" />
+        android:id="@+id/ll2"
+        android:layout_below="@+id/ll1"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="TERÇA-FEIRA"/>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvTerça" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txvTerça"
-        android:layout_alignLeft="@+id/txvTerça"
-        android:layout_alignStart="@+id/txvTerça"
-        android:layout_marginTop="39dp"
-        android:id="@+id/txvQuarta" />
+        android:id="@+id/ll3"
+        android:layout_below="@+id/ll2"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="QUARTA-FEIRA"/>
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvQuarta" />
+    </LinearLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txvQuinta"
-        android:layout_alignLeft="@+id/txvQuinta"
-        android:layout_alignStart="@+id/txvQuinta"
-        android:layout_marginTop="41dp"
-        android:id="@+id/txvSexta" />
+        android:id="@+id/ll4"
+        android:layout_below="@+id/ll3"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="QUINTA-FEIRA"/>
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvQuinta"/>
+    </LinearLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/txvSabado"
-        android:layout_alignEnd="@+id/txvSabado"
-        android:layout_marginBottom="47dp"
-        android:id="@+id/txvDomingo" />
+        android:id="@+id/ll5"
+        android:layout_below="@+id/ll4"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="SEXTA-FEIRA"/>
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvSexta" />
+    </LinearLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txvQuinta"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/txvQuarta"
-        android:layout_alignStart="@+id/txvQuarta" />
+        android:id="@+id/ll6"
+        android:layout_below="@+id/ll5"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="SÁBADO"/>
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvSabado"/>
+    </LinearLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:background="@drawable/borda"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txvSabado"
-        android:layout_below="@+id/txvSexta"
-        android:layout_alignLeft="@+id/txvSexta"
-        android:layout_alignStart="@+id/txvSexta"
-        android:layout_marginTop="49dp" />
-
-
+        android:id="@+id/ll7"
+        android:layout_below="@+id/ll6"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="DOMINGO E FERIADOS"/>
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvDomingo" />
+    </LinearLayout>
 </RelativeLayout>
+</ScrollView>

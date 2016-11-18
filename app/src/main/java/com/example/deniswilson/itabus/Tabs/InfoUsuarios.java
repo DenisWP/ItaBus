@@ -46,7 +46,7 @@ public class InfoUsuarios extends Fragment {
         txtCodigo = (TextView) rootView.findViewById(R.id.txtCodigo);
         txtBairro = (TextView) rootView.findViewById(R.id.txtBairro);
         txtTrajeto = (TextView) rootView.findViewById(R.id.txtTrajeto);
-        txtItinerario = (TextView) rootView.findViewById(R.id.txtItinerario);
+        //txtItinerario = (TextView) rootView.findViewById(R.id.txtItinerario);
         txtParadas = (TextView) rootView.findViewById(R.id.txtParadas);
         txtValorPassagem = (TextView) rootView.findViewById(R.id.txtValorPassagem);
         txtAcessoPcd = (TextView) rootView.findViewById(R.id.txtAcessoPcd);
@@ -101,7 +101,7 @@ public class InfoUsuarios extends Fragment {
         txtCodigo.setText(municipal.getCodigo());
         txtBairro.setText(municipal.getBairro());
         txtTrajeto.setText(municipal.getTrajeto());
-        txtItinerario.setText(municipal.getItinerarios());
+//        txtItinerario.setText(municipal.getItinerarios());
         txtParadas.setText(municipal.getParadas());
         txtValorPassagem.setText(municipal.getValorPassagem());
         txtAcessoPcd.setText(municipal.getAcessoPcd());
