@@ -25,6 +25,7 @@ public class ActCadMunicipal extends AppCompatActivity {
     EditText pesquisar;
     EditText codigo;
     EditText bairro;
+    EditText trajeto;
     EditText horarios;
     EditText itinerarios;
     EditText paradas;
@@ -48,6 +49,7 @@ public class ActCadMunicipal extends AppCompatActivity {
         pesquisar = (EditText) findViewById(R.id.edtPesquisarM);
         codigo = (EditText) findViewById(R.id.edtCodigoM);
         bairro = (EditText) findViewById(R.id.edtBairroM);
+        trajeto = (EditText) findViewById(R.id.edtTrajetoM);
         horarios = (EditText) findViewById(R.id.edtHoráriosM);
         itinerarios = (EditText) findViewById(R.id.edtItinerarioM);
         paradas = (EditText) findViewById(R.id.edtParadasM);
@@ -75,6 +77,7 @@ public class ActCadMunicipal extends AppCompatActivity {
         try {
             municipal.setCodigo(codigo.getText().toString());
             municipal.setBairro(bairro.getText().toString());
+            municipal.setTrajeto(trajeto.getText().toString());
             municipal.setHorarios(horarios.getText().toString());
             municipal.setItinerarios(itinerarios.getText().toString());
             municipal.setParadas(paradas.getText().toString());
@@ -83,6 +86,7 @@ public class ActCadMunicipal extends AppCompatActivity {
 
             if (       municipal.getCodigo().length() == 0
                     || municipal.getBairro().length() == 0
+                    || municipal.getTrajeto().length() == 0
                     || municipal.getHorarios().length() == 0
                     || municipal.getItinerarios().length() == 0
                     || municipal.getParadas().length() == 0
@@ -129,6 +133,7 @@ public class ActCadMunicipal extends AppCompatActivity {
         pesquisar.setText("");
         codigo.setText("");
         bairro.setText("");
+        trajeto.setText("");
         horarios.setText("");
         itinerarios.setText("");
         paradas.setText("");
@@ -148,6 +153,7 @@ public class ActCadMunicipal extends AppCompatActivity {
             Cursor cursor = conexao.rawQuery("SELECT "  +BD.COLUNA_IDM+","
                                                         +BD.COLUNA_CODIGO+","
                                                         +BD.COLUNA_BAIRRO+","
+                                                        +BD.COLUNA_TRAJETO+","
                                                         +BD.COLUNA_HORARIOS+","
                                                         +BD.COLUNA_ITINERARIOS+","
                                                         +BD.COLUNA_PARADAS+","
@@ -161,11 +167,12 @@ public class ActCadMunicipal extends AppCompatActivity {
                 municipal.setId(cursor.getLong(0));
                 codigo.setText(cursor.getString(1));
                 bairro.setText(cursor.getString(2));
-                horarios.setText(cursor.getString(3));
-                itinerarios.setText(cursor.getString(4));
-                paradas.setText(cursor.getString(5));
-                valorPassagem.setText(cursor.getString(6));
-                acesspPcd.setText(cursor.getString(7));
+                trajeto.setText(cursor.getString(3));
+                horarios.setText(cursor.getString(4));
+                itinerarios.setText(cursor.getString(5));
+                paradas.setText(cursor.getString(6));
+                valorPassagem.setText(cursor.getString(7));
+                acesspPcd.setText(cursor.getString(8));
 
             }else {
                 Toast.makeText(this, "Código não encontrado.", Toast.LENGTH_SHORT).show();

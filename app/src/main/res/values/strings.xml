@@ -51,8 +51,9 @@
     <!-- PARA AS DUAS OPÇÕES -->
     <string name="edtPesquisar">PESQUISAR</string>
     <string name="edtCodigo">Código</string>
-    <string name="edtHoriarios">Horários</string>
-    <string name="edtItinerario">Codigo da Rota</string>
+    <string name="edtTrajeto">Trajeto</string>
+    <string name="edtHoriarios">Código do Horário</string>
+    <string name="edtItinerario">Código da Rota</string>
     <string name="edtParadas">Paradas</string>
     <string name="edtValorPassagem">Valor da passagem</string>
     <string name="edtAcesso">Acesso PCD</string>

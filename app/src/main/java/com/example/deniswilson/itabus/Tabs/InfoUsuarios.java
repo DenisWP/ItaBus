@@ -35,7 +35,7 @@ public class InfoUsuarios extends Fragment {
     public static String horario, rotas; /*Preciso saber o código do horário,
     as latitudes e longitudes para gerar a Lista de Horários e as rotas*/
 
-    TextView txtCodigo, txtBairro, txtItinerario, txtParadas, txtValorPassagem, txtAcessoPcd;
+    TextView txtCodigo, txtBairro, txtTrajeto, txtItinerario, txtParadas, txtValorPassagem, txtAcessoPcd;
     ImageButton imgRotas;
 
     @Nullable
@@ -45,6 +45,7 @@ public class InfoUsuarios extends Fragment {
 
         txtCodigo = (TextView) rootView.findViewById(R.id.txtCodigo);
         txtBairro = (TextView) rootView.findViewById(R.id.txtBairro);
+        txtTrajeto = (TextView) rootView.findViewById(R.id.txtTrajeto);
         txtItinerario = (TextView) rootView.findViewById(R.id.txtItinerario);
         txtParadas = (TextView) rootView.findViewById(R.id.txtParadas);
         txtValorPassagem = (TextView) rootView.findViewById(R.id.txtValorPassagem);
@@ -99,6 +100,7 @@ public class InfoUsuarios extends Fragment {
     private void exibirDados(){
         txtCodigo.setText(municipal.getCodigo());
         txtBairro.setText(municipal.getBairro());
+        txtTrajeto.setText(municipal.getTrajeto());
         txtItinerario.setText(municipal.getItinerarios());
         txtParadas.setText(municipal.getParadas());
         txtValorPassagem.setText(municipal.getValorPassagem());

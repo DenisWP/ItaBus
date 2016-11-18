@@ -27,6 +27,7 @@ public class Interacoes {
 
         dadosMunicipal.put(BD.COLUNA_CODIGO, municipal.getCodigo());
         dadosMunicipal.put(BD.COLUNA_BAIRRO, municipal.getBairro());
+        dadosMunicipal.put(BD.COLUNA_TRAJETO, municipal.getTrajeto());
         dadosMunicipal.put(BD.COLUNA_HORARIOS, municipal.getHorarios());
         dadosMunicipal.put(BD.COLUNA_ITINERARIOS, municipal.getItinerarios());
         dadosMunicipal.put(BD.COLUNA_PARADAS, municipal.getParadas());
@@ -41,6 +42,7 @@ public class Interacoes {
 
         dadosMunicipal.put(BD.COLUNA_CODIGO, municipal.getCodigo());
         dadosMunicipal.put(BD.COLUNA_BAIRRO, municipal.getBairro());
+        dadosMunicipal.put(BD.COLUNA_TRAJETO, municipal.getTrajeto());
         dadosMunicipal.put(BD.COLUNA_HORARIOS, municipal.getHorarios());
         dadosMunicipal.put(BD.COLUNA_ITINERARIOS, municipal.getItinerarios());
         dadosMunicipal.put(BD.COLUNA_PARADAS, municipal.getParadas());
@@ -73,11 +75,12 @@ public class Interacoes {
                 municipal.setId(cursor.getLong(0));
                 municipal.setCodigo(cursor.getString(1));
                 municipal.setBairro(cursor.getString(2));
-                municipal.setHorarios(cursor.getString(3));
-                municipal.setItinerarios(cursor.getString(4));
-                municipal.setParadas(cursor.getString(5));
-                municipal.setValorPassagem(cursor.getString(6));
-                municipal.setAcessoPcd(cursor.getString(7));
+                municipal.setTrajeto(cursor.getString(3));
+                municipal.setHorarios(cursor.getString(4));
+                municipal.setItinerarios(cursor.getString(5));
+                municipal.setParadas(cursor.getString(6));
+                municipal.setValorPassagem(cursor.getString(7));
+                municipal.setAcessoPcd(cursor.getString(8));
 
                 adpMunicipal.add(municipal);
 

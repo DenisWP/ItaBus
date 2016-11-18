@@ -43,19 +43,23 @@
         android:layout_height="wrap_content"
         android:hint="@string/edtBairro"/>
     <EditText
+        android:id="@+id/edtTrajetoM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtTrajeto"
+        android:inputType="textMultiLine"
+        android:lines="3"/>
+    <EditText
         android:id="@+id/edtHoráriosM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edtHoriarios"
-        android:inputType="textMultiLine"
-        android:lines="4"/>
+        android:hint="@string/edtHoriarios"/>
     <EditText
         android:id="@+id/edtItinerarioM"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edtItinerario"
-        android:inputType="textMultiLine"
-        android:lines="2"/>
+        android:inputType="textMultiLine"/>
     <EditText
         android:id="@+id/edtParadasM"
         android:layout_width="match_parent"

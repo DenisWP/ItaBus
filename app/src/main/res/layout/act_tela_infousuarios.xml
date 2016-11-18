@@ -31,11 +31,21 @@
             android:layout_marginTop="46dp" />
 
     <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTrajeto"
+        android:layout_below="@+id/txtBairro"
+        android:layout_alignLeft="@+id/txtCodigo"
+        android:layout_alignStart="@+id/txtCodigo"
+        android:layout_marginTop="46dp" />
+
+    <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtItinerario"
-            android:layout_below="@+id/txtBairro"
+            android:layout_below="@+id/txtTrajeto"
             android:layout_alignLeft="@+id/txtBairro"
             android:layout_alignStart="@+id/txtBairro"
             android:layout_marginTop="61dp" />

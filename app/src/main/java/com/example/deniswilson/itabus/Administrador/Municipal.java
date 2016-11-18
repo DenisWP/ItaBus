@@ -13,6 +13,7 @@ public class Municipal implements Serializable {
     private long id;
     private String codigo;
     private String bairro;
+    private String trajeto;
     private String horarios;
     private String itinerarios;
     private String paradas;
@@ -37,6 +38,14 @@ public class Municipal implements Serializable {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getTrajeto() {
+        return trajeto;
+    }
+
+    public void setTrajeto(String trajeto) {
+        this.trajeto = trajeto;
     }
 
     public String getBairro() {
@@ -100,4 +109,5 @@ public class Municipal implements Serializable {
        }else
            return position;
     }
+
 }

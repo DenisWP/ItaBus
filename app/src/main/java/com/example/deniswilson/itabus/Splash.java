@@ -20,7 +20,6 @@ public class Splash extends AppCompatActivity implements Runnable{
         setContentView(R.layout.splash);
         Handler handler = new Handler();
         handler.postDelayed(this, 4000);
-
     }
 
     /**/

@@ -10,12 +10,13 @@ import android.database.sqlite.*;
 public class BD extends SQLiteOpenHelper{
 
     private static final String NOME_BD = "transporte";
-    private static final int VERSAO_BD = 4;
+    private static final int VERSAO_BD = 5;
 
     public static final String TABELA_MUNICIPAL = "municipal";
     public static final String COLUNA_IDM = "_id"; /*Chave primária para tabela municipal*/
     public static final String COLUNA_CODIGO = "codigo";
     public static final String COLUNA_BAIRRO = "bairro"; // Transporte municipal
+    public static final String COLUNA_TRAJETO = "trajeto";
     public static final String COLUNA_HORARIOS = "horarios";
     public static final String COLUNA_ITINERARIOS = "itinerarios";
     public static final String COLUNA_PARADAS = "paradas"; // Transporte
@@ -61,6 +62,7 @@ public class BD extends SQLiteOpenHelper{
                         + COLUNA_IDM + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "
                         + COLUNA_CODIGO + " TEXT, "
                         + COLUNA_BAIRRO + " TEXT, "
+                        + COLUNA_TRAJETO + " TEXT, "
                         + COLUNA_HORARIOS + " TEXT, "
                         + COLUNA_ITINERARIOS + " TEXT, "
                         + COLUNA_PARADAS + " TEXT, "

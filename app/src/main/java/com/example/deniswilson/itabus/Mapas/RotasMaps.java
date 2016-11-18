@@ -14,12 +14,14 @@ import android.widget.Toast;
 
 import com.example.deniswilson.itabus.Administrador.BD;
 import com.example.deniswilson.itabus.Administrador.Rotas;
+import com.example.deniswilson.itabus.R;
 import com.example.deniswilson.itabus.Tabs.InfoUsuarios;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -153,16 +155,16 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
                          Double.parseDouble(cursor.getString(4))),
                          new LatLng(Double.parseDouble(cursor.getString(3)),
                          Double.parseDouble(cursor.getString(5)))
-
-
-
                 );
+
+
                 LatLng origem = new LatLng(Double.parseDouble(cursor.getString(2)),
                                            Double.parseDouble(cursor.getString(4)));
 
                 mMap.addMarker(new MarkerOptions()
                                 .position(origem)
                                 .title("Origem")
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.markori))
 
                                             /*
                                             * Se eu quiser colocar umma imagem de ícone:
@@ -176,8 +178,9 @@ public class RotasMaps extends SupportMapFragment implements OnMapReadyCallback 
                         Double.parseDouble(cursor.getString(5)));
 
                 mMap.addMarker(new MarkerOptions()
-                                .position(origem)
+                                .position(destino)
                                 .title("Destino")
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.markdest))
 
                                                         /*
                                                         * Se eu quiser colocar umma imagem de ícone:
